@@ -22,9 +22,6 @@ public class RaccoonCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //lock dynamic rotation
-        transform.rotation = new Quaternion(0, 0, 0, 0);
-
         hInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
         if(verticalInput > 0 && IsGrounded())
