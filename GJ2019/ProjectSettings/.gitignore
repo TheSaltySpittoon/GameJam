@@ -1,1 +1,12 @@
 *.asset
+/AudioManager.asset
+/ClusterInputManager.asset
+/EditorBuildSettings.asset
+/GraphicsSettings.asset
+/InputManager.asset
+/NavMeshAreas.asset
+/PresetManager.asset
+/TagManager.asset
+/TimeManager.asset
+/UnityConnectSettings.asset
+/VFXManager.asset
