@@ -16,6 +16,9 @@ public class RigidBodyGravityMod : MonoBehaviour
 	void FixedUpdate()
 	{
 		rigidbody.useGravity = false;
-		if (useGravity) rigidbody.AddForce(Physics.gravity * (rigidbody.mass * gravityMod));
+		if (useGravity)
+		{
+			rigidbody.AddForce(Physics.gravity * (rigidbody.mass * gravityMod));
+		}
 	}
 }
