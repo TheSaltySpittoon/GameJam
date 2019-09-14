@@ -3,6 +3,14 @@ GJ2019/Library
 GJ2019/Library/*
 Library/
 Library
+Temp/
+Temp/*
+/Library
+/Temp
+/Library/
+/Temp/
+Temp
+Library
 
 # Compiled source #
 ###################
