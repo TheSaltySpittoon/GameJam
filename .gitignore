@@ -1,5 +1,5 @@
 # Don't track content of these folders
-GJ2019/Library/
+GJ2019/Library/*
 
 # Compiled source #
 ###################
