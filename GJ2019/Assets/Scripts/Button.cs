@@ -8,7 +8,6 @@ public class Button : LevelObject
     public float weightRequired;
     public bool weightSatisfied;
     public bool isPushed;
-    private bool isMoving;
     public float sinkDistance;
     public float compressionSpeed;
 
@@ -19,7 +18,6 @@ public class Button : LevelObject
     void Start()
     {
         startingPositionY = gameObject.transform.position.y;
-        isMoving = false;
     }
 
     // Update is called once per frame
