@@ -95,6 +95,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HasCollision: 1
   Interactable: 0
+  weightRequired: 0
+  weightSatisfied: 0
+  sinkDistance: 0
+  compressionSpeed: 0
 --- !u!65 &7693959890019054718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -119,5 +123,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.086027145, z: 1}
-  m_Center: {x: 0, y: 0.53087425, z: 0}
+  m_Size: {x: 1, y: 0.36265063, z: 1}
+  m_Center: {x: 0, y: 0.669186, z: 0}

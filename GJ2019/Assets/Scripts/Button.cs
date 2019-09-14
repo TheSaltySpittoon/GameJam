@@ -5,8 +5,10 @@ using UnityEngine;
 public class Button : LevelObject
 {
 
-    public int weightRequired;
+    public float weightRequired;
     public bool weightSatisfied;
+    public bool isPushed;
+    private bool isMoving;
     public float sinkDistance;
     public float compressionSpeed;
 
@@ -16,52 +18,74 @@ public class Button : LevelObject
     // Start is called before the first frame update
     void Start()
     {
-        GameObject go = this.transform.parent.GetComponent<LevelObject>().gameObject;
-        startingPositionY = go.transform.position.y;
+        startingPositionY = gameObject.transform.position.y;
+        isMoving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        GameObject go = this.transform.parent.GetComponent<LevelObject>().gameObject;
-        Vector3 currentPosition = go.transform.position;
+        Vector3 currentPosition = gameObject.transform.position;
 
-        if (weightSatisfied && go.transform.position.y > startingPositionY - sinkDistance)
+        if (weightSatisfied && !isPushed && gameObject.transform.position.y > startingPositionY - sinkDistance)
         {
-            go.transform.position = new Vector3(currentPosition.x, currentPosition.y - compressionSpeed * Time.deltaTime, currentPosition.z);
+            float newY = currentPosition.y - compressionSpeed * Time.deltaTime;
+            if (newY < startingPositionY - sinkDistance)
+            {
+                newY = startingPositionY - sinkDistance;
+                isPushed = true;
+            }
+
+            gameObject.transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
         }
         else if (!weightSatisfied)
         {
-            if (go.transform.position.y < startingPositionY)
+            isPushed = false;
+            if (gameObject.transform.position.y < startingPositionY)
             {
-                go.transform.position = new Vector3(currentPosition.x, currentPosition.y + compressionSpeed * Time.deltaTime, currentPosition.z);
-            }
-            if (go.transform.position.y > startingPositionY)
-            {
-                go.transform.position = new Vector3(currentPosition.x, startingPositionY, currentPosition.z);
+                float newY = currentPosition.y + compressionSpeed * Time.deltaTime;
+                if (newY > startingPositionY)
+                {
+                    newY = startingPositionY;
+                }
+                gameObject.transform.position = new Vector3(currentPosition.x, currentPosition.y + compressionSpeed * Time.deltaTime, currentPosition.z);
             }
         }
-
-
     }
 
-    void OnCollisionEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         weightOnButton += other.attachedRigidbody.mass;
         if (weightOnButton >= weightRequired)
         {
             weightSatisfied = true;
         }
+        Debug.Log("collision enter");
 
     }
 
-    void OnCollisionExit(Collider other)
+    void OnTriggerExit(Collider other)
     {
         weightOnButton -= other.attachedRigidbody.mass;
         if (weightOnButton < weightRequired)
         {
             weightSatisfied = false;
         }
+        Debug.Log("collision exit");
+    }
+
+    public float PercentagePushed()
+    {
+        float percent = 0;
+        if (sinkDistance == 0)
+        {
+            percent = 100;
+        }
+        else
+        {
+            percent = (startingPositionY - gameObject.transform.position.y)/sinkDistance;
+        }
+        return percent;
     }
 }
 
