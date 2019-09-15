@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 783c6cd76b80e4fd183b9e1341881077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 20
+  jumpSpeed: 21
   moveSpeed: 10
 --- !u!54 &7800430516937192534
 Rigidbody:
@@ -184,4 +184,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
   gravityMod: 5
+  terminalVelocity: 20
   useGravity: 1
