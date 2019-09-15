@@ -139,6 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ad0647cb4ea04366892a3c24ee0399c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachedMoveDistance: 2
 --- !u!54 &9191381567822232700
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidbody: {fileID: 0}
-  gravityMod: 1
+  gravityMod: 5
   terminalVelocity: 20
   useGravity: 1
 --- !u!135 &5221971638146879718

@@ -4,11 +4,18 @@ using UnityEngine;
 public static class CharacterManager
 {
 	public static bool CharactersAttached = false;
-	public static float attachDistance = 1.0f;
+    public static float AttachSide = 0.0f; //1.0f for raccoon->ball, -1.0f for ball<-raccoon
+
+    private static float attachDistance = 3.0f;
 
     public static void JoinCharacters()
 	{
-		CharactersAttached = true;
+        //detect what side of the ball the raccoon is on
+        Vector3 raccoonPos = RaccoonCharacterController.instance.gameObject.transform.position;
+        Vector3 ballPos = BallCharacterController.instance.gameObject.transform.position;
+        Vector3 distDirection = ballPos - raccoonPos;
+        AttachSide = Math.Sign(distDirection.x);
+        CharactersAttached = true;
 	}
 
     public static void DetachCharacters()
@@ -18,12 +25,23 @@ public static class CharacterManager
 
     public static bool ShouldAttach()
 	{
-		float dist = Vector3.Distance(RaccoonCharacterController.instance.gameObject.transform.position,
-            BallCharacterController.instance.gameObject.transform.position);
+        //if raccoon and ball are on the ground, are within minimum distance,
+        //and raccoon is moving towards ball, attach the two
+        Vector3 raccoonPos = RaccoonCharacterController.instance.gameObject.transform.position;
+        Vector3 ballPos = BallCharacterController.instance.gameObject.transform.position;
+        float dist = Vector3.Distance( raccoonPos,ballPos);
         bool raccoonGrounded = RaccoonCharacterController.instance.IsGrounded();
-        bool ballGrounded = BallCharacterController.instance.IsGrounded();
+        float hInput = Input.GetAxis("Horizontal");
+        Vector3 distDirection = ballPos - raccoonPos;
+        bool walkingTowardsBall = Math.Sign(hInput) == Math.Sign(distDirection.x);
 
-        if (dist <= attachDistance && raccoonGrounded && ballGrounded)
+        Debug.Log("Raccoon Grounded: " + raccoonGrounded +
+            ", Dist: " + dist +
+            ", Dist Dir: " + distDirection +
+            ", HInput: " + hInput + 
+            ", WalkingTowardsBall: " + walkingTowardsBall);
+
+        if (dist <= attachDistance && raccoonGrounded && walkingTowardsBall)
         {
             return true;
         }

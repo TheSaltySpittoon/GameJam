@@ -28,18 +28,35 @@ public class RaccoonCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hInput = Input.GetAxis("Horizontal");
+        bool upPressed = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
+
         if (!CharacterManager.CharactersAttached)
         {
-            hInput = Input.GetAxis("Horizontal");
-            float verticalInput = Input.GetAxis("Vertical");
-            if (verticalInput > 0 && IsGrounded())
+            if(CharacterManager.ShouldAttach())
             {
-                rb.velocity = new Vector3(0, jumpSpeed, 0);
+                CharacterManager.JoinCharacters();
             }
+
+            //TODO: add climbing update cycle
         }
         else
         {
+            bool cInput = Input.GetKeyDown(KeyCode.C);
+            //kicking
 
+            //step away from ball
+            if(cInput)
+            {
+                CharacterManager.DetachCharacters();
+            }
+            
+        }
+
+        if(upPressed && IsGrounded())
+        {
+            rb.velocity = new Vector3(0, jumpSpeed, 0);
+            CharacterManager.DetachCharacters();
         }
     }
 
@@ -51,6 +68,6 @@ public class RaccoonCharacterController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.01f);
     }
 }
