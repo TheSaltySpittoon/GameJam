@@ -21,12 +21,14 @@ public class Deathbox : LevelObject
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("my name is " + other.gameObject.name);
-        if (other.gameObject.name == "Cube")
+        if (other.gameObject.name == "PlayerRaccoon")
         {
+            CharacterManager.DetachCharacters();
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        else if (other.gameObject.name == "Sphere")
+        else if (other.gameObject.name == "PlayerBall")
         {
+            CharacterManager.DetachCharacters();
             other.attachedRigidbody.velocity = Vector3.zero;
             other.attachedRigidbody.angularVelocity = Vector3.zero;
             other.gameObject.transform.position = new Vector3(0,1,0);
