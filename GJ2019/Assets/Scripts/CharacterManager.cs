@@ -31,28 +31,26 @@ public static class CharacterManager
 	{
         //if raccoon and ball are on the ground, are within minimum distance,
         //and raccoon is moving towards ball, attach the two
-        Vector3 raccoonPos = RaccoonCharacterController.instance.gameObject.transform.position;
-        Vector3 ballPos = BallCharacterController.instance.gameObject.transform.position;
-        float dist = Vector3.Distance( raccoonPos,ballPos);
-        bool raccoonGrounded = RaccoonCharacterController.instance.IsGrounded();
-        float hInput = Input.GetAxis("Horizontal");
-        Vector3 distDirection = ballPos - raccoonPos;
-        bool walkingTowardsBall = Math.Sign(hInput) == Math.Sign(distDirection.x);
-        bool cooldown = detachTimer > attachCooldown;
-
-        Debug.Log("Raccoon Grounded: " + raccoonGrounded +
-            ", Dist: " + dist +
-            ", Dist Dir: " + distDirection +
-            ", HInput: " + hInput + 
-            ", WalkingTowardsBall: " + walkingTowardsBall);
-
-        if (dist <= attachDistance && raccoonGrounded && walkingTowardsBall && cooldown)
+        if (RaccoonCharacterController.instance != null && BallCharacterController.instance != null)
         {
-            return true;
+            Vector3 raccoonPos = RaccoonCharacterController.instance.gameObject.transform.position;
+            Vector3 ballPos = BallCharacterController.instance.gameObject.transform.position;
+            float dist = Vector3.Distance(raccoonPos, ballPos);
+            bool raccoonGrounded = RaccoonCharacterController.instance.IsGrounded();
+            float hInput = Input.GetAxis("Horizontal");
+            Vector3 distDirection = ballPos - raccoonPos;
+            bool walkingTowardsBall = Math.Sign(hInput) == Math.Sign(distDirection.x);
+            bool cooldown = detachTimer > attachCooldown;
+
+            if (dist <= attachDistance && raccoonGrounded && walkingTowardsBall && cooldown)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        else
-        {
-            return false;
-        }
+        return false;
 	}
 }
