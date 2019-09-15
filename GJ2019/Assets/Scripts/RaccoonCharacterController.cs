@@ -110,9 +110,9 @@ public class RaccoonCharacterController : MonoBehaviour
     public bool IsHuggingClimbableWall()
     {
         RaycastHit hitLeft;
-        Physics.Raycast(transform.position, Vector2.left, out hitLeft, 2.5f);
+        Physics.Raycast(transform.position, Vector2.left, out hitLeft, 1f);
         RaycastHit hitRight;
-        Physics.Raycast(transform.position, Vector2.right, out hitRight, 2.5f);
+        Physics.Raycast(transform.position, Vector2.right, out hitRight, 1f);
         bool leftValid = hitLeft.collider != null && hitLeft.collider.gameObject.CompareTag(GameConst.TAG_CLIMBABLE_WALL);
         bool rightValid = hitRight.collider != null && hitRight.collider.gameObject.CompareTag(GameConst.TAG_CLIMBABLE_WALL);
         bool movingTowardsWall = false;
@@ -130,8 +130,9 @@ public class RaccoonCharacterController : MonoBehaviour
                 wallPos = hitRight.collider.gameObject.transform.position;
                 currWallSide = 1;
             }
-            Vector3 distDirection = wallPos - raccoonPos;
-            movingTowardsWall = Math.Sign(hInput) == Math.Sign(distDirection.x);
+            movingTowardsWall = true;
+            //Vector3 distDirection = wallPos - raccoonPos;
+            //movingTowardsWall = Math.Sign(hInput) == Math.Sign(distDirection.x);
         }
         return movingTowardsWall;
     }
