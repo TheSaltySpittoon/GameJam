@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class BallCharacterController : MonoBehaviour
 {
-    private float distToGround = 0.0f;
     private Rigidbody rb;
+    private float hInput = 0.0f;
+
+    public float attachedMoveDistance = 2.0f;
 
     public static BallCharacterController instance = null;
     // Start is called before the first frame update
@@ -15,19 +17,25 @@ public class BallCharacterController : MonoBehaviour
         {
             instance = this;
         }
-
-        distToGround = GetComponent<Collider>().bounds.extents.y;
         rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(CharacterManager.CharactersAttached)
+        {
+            //move with the raccoon
+            hInput = Input.GetAxis("Horizontal");
+        }
     }
 
-    public bool IsGrounded()
+    private void FixedUpdate()
     {
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        if (CharacterManager.CharactersAttached)
+        {
+            Vector3 movement = new Vector3(hInput, 0, 0);
+            rb.MovePosition(rb.position + movement * RaccoonCharacterController.instance.moveSpeed * Time.fixedDeltaTime);
+        }
     }
 }

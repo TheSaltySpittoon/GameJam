@@ -4,32 +4,53 @@ using UnityEngine;
 public static class CharacterManager
 {
 	public static bool CharactersAttached = false;
-	public static float attachDistance = 1.0f;
+    public static float AttachSide = 0.0f; //1.0f for raccoon->ball, -1.0f for ball<-raccoon
+
+    private static float attachDistance = 2.5f;
+
+    public static float detachTimer = 0.0f;
+    public static float attachCooldown = 0.5f;
 
     public static void JoinCharacters()
 	{
-		CharactersAttached = true;
+        //detect what side of the ball the raccoon is on
+        Vector3 raccoonPos = RaccoonCharacterController.instance.gameObject.transform.position;
+        Vector3 ballPos = BallCharacterController.instance.gameObject.transform.position;
+        Vector3 distDirection = ballPos - raccoonPos;
+        AttachSide = Math.Sign(distDirection.x);
+        CharactersAttached = true;
 	}
 
     public static void DetachCharacters()
 	{
 		CharactersAttached = false;
+        detachTimer = 0.0f;
 	}
 
     public static bool ShouldAttach()
 	{
-		float dist = Vector3.Distance(RaccoonCharacterController.instance.gameObject.transform.position,
-            BallCharacterController.instance.gameObject.transform.position);
-        bool raccoonGrounded = RaccoonCharacterController.instance.IsGrounded();
-        bool ballGrounded = BallCharacterController.instance.IsGrounded();
+        //if raccoon and ball are on the ground, are within minimum distance,
+        //and raccoon is moving towards ball, attach the two
+        if (RaccoonCharacterController.instance != null && BallCharacterController.instance != null)
+        {
+            Vector3 raccoonPos = RaccoonCharacterController.instance.gameObject.transform.position;
+            Vector3 ballPos = BallCharacterController.instance.gameObject.transform.position;
+            float dist = Vector3.Distance(raccoonPos, ballPos);
+            bool raccoonGrounded = RaccoonCharacterController.instance.IsGrounded();
+            float hInput = Input.GetAxis("Horizontal");
+            Vector3 distDirection = ballPos - raccoonPos;
+            bool walkingTowardsBall = Math.Sign(hInput) == Math.Sign(distDirection.x);
+            bool cooldown = detachTimer > attachCooldown;
 
-        if (dist <= attachDistance && raccoonGrounded && ballGrounded)
-        {
-            return true;
+            if (dist <= attachDistance && raccoonGrounded && walkingTowardsBall && cooldown)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
-        else
-        {
-            return false;
-        }
+        return false;
 	}
 }

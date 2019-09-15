@@ -13,7 +13,7 @@ public class BasicCamera : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown("t"))
+        if(Input.GetKeyDown(KeyCode.T))
         {
             lockToPlayer = !lockToPlayer;
         }

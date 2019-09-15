@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5232434221496884292
+--- !u!1 &1685486303909744038
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,46 +8,46 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5232434221496884293}
-  - component: {fileID: 5232434221496884312}
-  - component: {fileID: 5232434221496884315}
-  - component: {fileID: 5232434221496884314}
+  - component: {fileID: 16562376870538106}
+  - component: {fileID: 7616948732064716974}
+  - component: {fileID: 2432841960030897510}
+  - component: {fileID: 4143669973082286932}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: ClimbableWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5232434221496884293
+--- !u!4 &16562376870538106
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221496884292}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.274, y: 0.467, z: 0}
-  m_LocalScale: {x: 1.439235, y: 1.9334339, z: 1}
+  m_GameObject: {fileID: 1685486303909744038}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 38.961777, y: 0.35, z: 10}
   m_Children: []
-  m_Father: {fileID: 5232434221508880460}
+  m_Father: {fileID: 3987606808787091878}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5232434221496884312
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!33 &7616948732064716974
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221496884292}
+  m_GameObject: {fileID: 1685486303909744038}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5232434221496884315
+--- !u!23 &2432841960030897510
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221496884292}
+  m_GameObject: {fileID: 1685486303909744038}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -79,20 +79,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!65 &5232434221496884314
+--- !u!65 &4143669973082286932
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221496884292}
-  m_Material: {fileID: 0}
+  m_GameObject: {fileID: 1685486303909744038}
+  m_Material: {fileID: 13400000, guid: 45784511e085b4ba2bb1f029cac5fafe, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &5232434221508880457
+--- !u!1 &6905254897889834595
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -100,89 +100,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5232434221508880460}
-  - component: {fileID: 5232434221508880463}
-  - component: {fileID: 7800430516937192534}
-  - component: {fileID: 525775385094565714}
-  - component: {fileID: 3425746616041688233}
+  - component: {fileID: 3987606808787091878}
+  - component: {fileID: 5108812601880367920}
   m_Layer: 0
-  m_Name: PlayerRaccoon
-  m_TagString: Untagged
+  m_Name: ClimbableWall
+  m_TagString: ClimbableWall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5232434221508880460
+--- !u!4 &3987606808787091878
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221508880457}
+  m_GameObject: {fileID: 6905254897889834595}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5232434221496884293}
+  - {fileID: 16562376870538106}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5232434221508880463
+--- !u!114 &5108812601880367920
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221508880457}
+  m_GameObject: {fileID: 6905254897889834595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783c6cd76b80e4fd183b9e1341881077, type: 3}
+  m_Script: {fileID: 11500000, guid: 47cf0649cccb44123891fd5d8e450545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpSpeed: 21
-  moveSpeed: 10
---- !u!54 &7800430516937192534
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221508880457}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 120
-  m_CollisionDetection: 0
---- !u!65 &525775385094565714
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221508880457}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1.4500041, y: 1.9418964, z: 1}
-  m_Center: {x: 0.27081, y: 0.47094822, z: 0}
---- !u!114 &3425746616041688233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5232434221508880457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 706606db382db41a5940e7cdf73e8d73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rigidbody: {fileID: 0}
-  gravityMod: 5
-  terminalVelocity: 20
-  useGravity: 1
+  HasCollision: 1
+  Interactable: 0
