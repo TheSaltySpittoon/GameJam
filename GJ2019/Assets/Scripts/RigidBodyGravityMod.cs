@@ -5,6 +5,7 @@ public class RigidBodyGravityMod : MonoBehaviour
 {
 	[HideInInspector] new public Rigidbody rigidbody;
 	public float gravityMod = 1.0f;
+    public float terminalVelocity = 20f;
 
 	public bool useGravity = true;
 
@@ -18,7 +19,14 @@ public class RigidBodyGravityMod : MonoBehaviour
 		rigidbody.useGravity = false;
 		if (useGravity)
 		{
-			rigidbody.AddForce(Physics.gravity * (rigidbody.mass * gravityMod));
+            if (Math.Abs(rigidbody.velocity.y) < terminalVelocity)
+            {
+                rigidbody.AddForce(Physics.gravity * (rigidbody.mass * gravityMod));
+            }
+            else
+            {
+                rigidbody.AddForce(Physics.gravity);
+            }
 		}
 	}
 }

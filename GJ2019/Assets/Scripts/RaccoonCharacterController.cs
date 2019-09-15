@@ -11,10 +11,16 @@ public class RaccoonCharacterController : MonoBehaviour
 
     private float hInput = 0.0f;
 
+    public static RaccoonCharacterController instance = null;
+
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        if(instance == null)
+        {
+            instance = this;
+        }
         distToGround = GetComponent<Collider>().bounds.extents.y;
         rb = GetComponent<Rigidbody>();
     }
@@ -22,13 +28,19 @@ public class RaccoonCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
-        if(verticalInput > 0 && IsGrounded())
+        if (!CharacterManager.CharactersAttached)
         {
-            rb.velocity = new Vector3(0, jumpSpeed, 0);
+            hInput = Input.GetAxis("Horizontal");
+            float verticalInput = Input.GetAxis("Vertical");
+            if (verticalInput > 0 && IsGrounded())
+            {
+                rb.velocity = new Vector3(0, jumpSpeed, 0);
+            }
         }
-        
+        else
+        {
+
+        }
     }
 
     private void FixedUpdate()
@@ -37,7 +49,7 @@ public class RaccoonCharacterController : MonoBehaviour
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
