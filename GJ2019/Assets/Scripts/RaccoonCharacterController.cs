@@ -8,6 +8,8 @@ public class RaccoonCharacterController : MonoBehaviour
     public float jumpSpeed = 10.0f;
     public float moveSpeed = 15.0f;
     public float wallDetectionRange = 1.5f;
+    public GameObject kickIndicator;
+    public float kickRange = 30;
 
     //distance between collider and ground
     private float distToGround = 0.0f;
@@ -17,6 +19,8 @@ public class RaccoonCharacterController : MonoBehaviour
 
     //whether in kick mode or not
     private bool kickMode = false;
+
+    private bool canClimb = false;
 
     private int currWallSide = 0; //-1 for wall to left, 1 for wall to right
     private float wallJumpCooldown = 0.5f; //cooldown until can reattach to wall
@@ -51,7 +55,8 @@ public class RaccoonCharacterController : MonoBehaviour
         }
 
         hInput = Input.GetAxis("Horizontal");
-        vInput = 0f;
+        vInput = Input.GetAxis("Vertical");
+        canClimb = false;
         bool upPressed = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
         bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
         
@@ -62,10 +67,10 @@ public class RaccoonCharacterController : MonoBehaviour
                 CharacterManager.JoinCharacters();
             }
 
-            //TODO: add climbing update cycle
+            //climbing update cycle
             if(IsHuggingClimbableWall())
             {
-                vInput = Input.GetAxis("Vertical");
+                canClimb = true;
                 GetComponent<RigidBodyGravityMod>().useGravity = false;
                 rb.velocity = new Vector3(0, 0, 0);
             }
@@ -77,17 +82,37 @@ public class RaccoonCharacterController : MonoBehaviour
         else
         {
             bool cInput = Input.GetKeyDown(KeyCode.C);
+            bool zInput = Input.GetKeyDown(KeyCode.Z);
+
             //kicking
+            if(zInput && !kickMode)
+            {
+                EnterKickMode();
+            }
+            else if(kickMode)
+            {
+                //adjust kick direction
+                kickIndicator.transform.RotateAround(kickIndicator.transform.position, Vector3.forward, vInput * 20 * Time.deltaTime);
+
+                if(zInput)
+                {
+                    KickBall();
+                }
+                if(cInput)
+                {
+                    ExitKickMode();
+                }
+            }
 
             //step away from ball
-            if(cInput)
+            if(cInput && !kickMode)
             {
                 CharacterManager.DetachCharacters();
             }
             
         }
 
-        if((upPressed || jumpPressed) && IsGrounded())
+        if((upPressed || jumpPressed) && IsGrounded() && !kickMode)
         {
             rb.velocity = new Vector3(0, jumpSpeed, 0);
             CharacterManager.DetachCharacters();
@@ -102,7 +127,12 @@ public class RaccoonCharacterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector3 movement = new Vector3(hInput, vInput, 0);
+        float targetV = 0f;
+        if(canClimb)
+        {
+            targetV = vInput;
+        }
+        Vector3 movement = new Vector3(hInput, targetV, 0);
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
@@ -141,4 +171,23 @@ public class RaccoonCharacterController : MonoBehaviour
         }
         return movingTowardsWall;
     }
+
+    private void EnterKickMode()
+    {
+        //spawn the targeting indicator and reset its position
+        kickIndicator.SetActive(true);
+        kickMode = true;
+    }
+
+    private void ExitKickMode()
+    {
+        kickIndicator.SetActive(false);
+        kickMode = false;
+    }
+
+    private void KickBall()
+    {
+
+    }
 }
+

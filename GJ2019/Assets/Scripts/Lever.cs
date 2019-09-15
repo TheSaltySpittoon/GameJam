@@ -9,8 +9,6 @@ public class Lever : MonoBehaviour
     private bool hasBeenPressed = false;
     private bool isPressable = false;
 
-    private bool pressConsumed = false;
-
     public GameObject stick;
 
     // Start is called before the first frame update
@@ -65,7 +63,6 @@ public class Lever : MonoBehaviour
     void ConsumePress()
     {
         // do we do anything here?
-        pressConsumed = true;
         hasBeenPressed = false;
     }
 }
