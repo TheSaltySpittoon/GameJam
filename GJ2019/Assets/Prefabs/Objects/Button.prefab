@@ -97,8 +97,11 @@ MonoBehaviour:
   Interactable: 0
   weightRequired: 0
   weightSatisfied: 0
+  isPushed: 0
   sinkDistance: 0
   compressionSpeed: 0
+  resets: 0
+  hasBeenPressed: 0
 --- !u!65 &7693959890019054718
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -123,5 +126,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.36265063, z: 1}
-  m_Center: {x: 0, y: 0.669186, z: 0}
+  m_Size: {x: 0.89650464, y: 0.44173408, z: 0.83645815}
+  m_Center: {x: 0.0072432756, y: 0.7087277, z: -0.0030604303}

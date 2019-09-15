@@ -10,9 +10,12 @@ public class Button : LevelObject
     public bool isPushed;
     public float sinkDistance;
     public float compressionSpeed;
+    public bool resets;
 
     private float weightOnButton;
     private float startingPositionY;
+
+    public bool hasBeenPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +34,7 @@ public class Button : LevelObject
             if (newY < startingPositionY - sinkDistance)
             {
                 newY = startingPositionY - sinkDistance;
+                hasBeenPressed = true;
                 isPushed = true;
             }
 
@@ -39,7 +43,7 @@ public class Button : LevelObject
         else if (!weightSatisfied)
         {
             isPushed = false;
-            if (gameObject.transform.position.y < startingPositionY)
+            if (gameObject.transform.position.y < startingPositionY && resets)
             {
                 float newY = currentPosition.y + compressionSpeed * Time.deltaTime;
                 if (newY > startingPositionY)
@@ -84,6 +88,11 @@ public class Button : LevelObject
             percent = (startingPositionY - gameObject.transform.position.y)/sinkDistance;
         }
         return percent;
+    }
+
+    public void ConsumePress()
+    {
+        hasBeenPressed = false;
     }
 }
 
