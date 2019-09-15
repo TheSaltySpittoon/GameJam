@@ -13,44 +13,51 @@ public class Button : LevelObject
     public bool resets;
 
     private float weightOnButton;
-    private float startingPositionY;
+    private Vector3 startingPosition;
+    private Vector3 endPosition;
+    private Vector3 negativeUp;
 
     public bool hasBeenPressed = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        startingPositionY = gameObject.transform.position.y;
+        negativeUp = gameObject.transform.up * -1;
+        startingPosition = gameObject.transform.position;
+        endPosition = startingPosition + sinkDistance * negativeUp;
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector3 currentPosition = gameObject.transform.position;
+        float displacedDistance = Vector3.Distance(currentPosition, startingPosition);
 
-        if (weightSatisfied && !isPushed && gameObject.transform.position.y > startingPositionY - sinkDistance)
+        if (weightSatisfied && !isPushed && displacedDistance < sinkDistance)
         {
-            float newY = currentPosition.y - compressionSpeed * Time.deltaTime;
-            if (newY < startingPositionY - sinkDistance)
+            Vector3 newPosition = currentPosition + compressionSpeed * Time.deltaTime * negativeUp;
+            float newDisplacedDistance = Vector3.Distance(newPosition, startingPosition);
+            if (newDisplacedDistance > sinkDistance)
             {
-                newY = startingPositionY - sinkDistance;
+                newPosition = endPosition;
                 hasBeenPressed = true;
                 isPushed = true;
             }
 
-            gameObject.transform.position = new Vector3(currentPosition.x, newY, currentPosition.z);
+            gameObject.transform.position = newPosition;
         }
         else if (!weightSatisfied)
         {
             isPushed = false;
-            if (gameObject.transform.position.y < startingPositionY && resets)
+            if (gameObject.transform.position.y != startingPosition.y && resets)
             {
-                float newY = currentPosition.y + compressionSpeed * Time.deltaTime;
-                if (newY > startingPositionY)
+                Vector3 newPosition = currentPosition - compressionSpeed * Time.deltaTime * negativeUp;
+                float newDisplacedDistance = Vector3.Distance(newPosition, endPosition);
+                if (newDisplacedDistance > sinkDistance)
                 {
-                    newY = startingPositionY;
+                    newPosition = startingPosition;
                 }
-                gameObject.transform.position = new Vector3(currentPosition.x, currentPosition.y + compressionSpeed * Time.deltaTime, currentPosition.z);
+                gameObject.transform.position = newPosition;
             }
         }
     }
@@ -85,7 +92,7 @@ public class Button : LevelObject
         }
         else
         {
-            percent = (startingPositionY - gameObject.transform.position.y)/sinkDistance;
+            percent = Vector3.Distance(startingPosition, gameObject.transform.position)/sinkDistance;
         }
         return percent;
     }
