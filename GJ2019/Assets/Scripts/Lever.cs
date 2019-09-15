@@ -11,6 +11,7 @@ public class Lever : MonoBehaviour
 
     private bool pressConsumed = false;
 
+    public GameObject stick;
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +32,7 @@ public class Lever : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("recieved collision0");
-        if (other.gameObject.name == "Cube")
+        if (other.gameObject.name == "PlayerRaccoon")
         {
             Debug.Log("recieved collision");
             isPressable = true;
@@ -42,7 +43,7 @@ public class Lever : MonoBehaviour
     void OnTriggerExit(Collider other)
     {
         Debug.Log("recieved exit0");
-        if (other.gameObject.name == "Cube")
+        if (other.gameObject.name == "PlayerRaccoon")
         {
             Debug.Log("recieved exit");
             isPressable = false;
@@ -57,9 +58,7 @@ public class Lever : MonoBehaviour
             isPushed = !isPushed;
             hasBeenPressed = !hasBeenPressed;
 
-            gameObject.transform.position = new Vector3(-gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-            Debug.Log("");
-
+            stick.transform.localPosition = new Vector3(-stick.transform.localPosition.x, stick.transform.localPosition.y, stick.transform.localPosition.z);
         }
     }
 
