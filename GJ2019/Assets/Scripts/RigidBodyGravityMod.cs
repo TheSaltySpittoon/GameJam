@@ -21,7 +21,7 @@ public class RigidBodyGravityMod : MonoBehaviour
 		{
             if (Math.Abs(rigidbody.velocity.y) < terminalVelocity)
             {
-                rigidbody.AddForce(Physics.gravity * (rigidbody.mass * gravityMod));
+                rigidbody.AddForce(Physics.gravity * gravityMod);
             }
             else
             {
