@@ -15,7 +15,7 @@ public class Ground : LevelObject
     public bool hasReachedEnd;
     public float moveDistance;
     public bool movingForward = true;
-    //public List<string> types = { "static", "revolving", "oneway" };
+    public bool movingHorizontal = true;
     private Vector3 startPoint;
     private Vector3 maxPosition;
 
@@ -29,7 +29,12 @@ public class Ground : LevelObject
             multiplier = -1;
         }
 
-        maxPosition = startPoint + new Vector3(multiplier * moveDistance, 0, 0) ;
+        maxPosition = startPoint + new Vector3(multiplier * moveDistance, 0, 0);
+        if (!movingHorizontal)
+        {
+            maxPosition = startPoint + new Vector3(0, multiplier * moveDistance, 0); ;
+        }
+        
 
     }
 
@@ -62,9 +67,16 @@ public class Ground : LevelObject
                     multiplier = -1;
                 }
 
-                Vector3 newPosition = gameObject.transform.position + new Vector3(speed * Time.deltaTime * multiplier, 0, 0); ;
-                float startdistance = Vector3.Distance(startPoint, gameObject.transform.position);
-                float enddistance = Vector3.Distance(gameObject.transform.position, maxPosition);
+                Vector3 movement = new Vector3(speed * Time.deltaTime * multiplier, 0, 0);
+                if (!movingHorizontal)
+                {
+                    movement = new Vector3(0, speed * Time.deltaTime * multiplier, 0);
+                }
+
+                Vector3 newPosition = gameObject.transform.position + movement;
+
+                float startdistance = Vector3.Distance(startPoint, newPosition);
+                float enddistance = Vector3.Distance(maxPosition, newPosition);
                 if (startdistance > moveDistance || enddistance > moveDistance)
                 {
                     hasReachedEnd = true;
@@ -75,7 +87,10 @@ public class Ground : LevelObject
                     else
                     {
                         isMoveable = false;
-                        button.GetComponent<Button>().ConsumePress();
+                        if (button != null)
+                        {
+                            button.GetComponent<Button>().ConsumePress();
+                        }
                     }
                     if (enddistance > moveDistance)
                     {
