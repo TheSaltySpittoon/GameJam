@@ -28,6 +28,12 @@ public class RaccoonCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(CharacterManager.detachTimer < CharacterManager.attachCooldown)
+        {
+            //jank to do this here, but need an update cycle for this cooldown
+            CharacterManager.detachTimer += Time.deltaTime;
+        }
+
         hInput = Input.GetAxis("Horizontal");
         bool upPressed = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
 

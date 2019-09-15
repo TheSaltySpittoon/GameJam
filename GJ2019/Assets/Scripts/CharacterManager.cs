@@ -8,6 +8,9 @@ public static class CharacterManager
 
     private static float attachDistance = 2.5f;
 
+    public static float detachTimer = 0.0f;
+    public static float attachCooldown = 0.5f;
+
     public static void JoinCharacters()
 	{
         //detect what side of the ball the raccoon is on
@@ -21,6 +24,7 @@ public static class CharacterManager
     public static void DetachCharacters()
 	{
 		CharactersAttached = false;
+        detachTimer = 0.0f;
 	}
 
     public static bool ShouldAttach()
@@ -34,6 +38,7 @@ public static class CharacterManager
         float hInput = Input.GetAxis("Horizontal");
         Vector3 distDirection = ballPos - raccoonPos;
         bool walkingTowardsBall = Math.Sign(hInput) == Math.Sign(distDirection.x);
+        bool cooldown = detachTimer > attachCooldown;
 
         Debug.Log("Raccoon Grounded: " + raccoonGrounded +
             ", Dist: " + dist +
@@ -41,7 +46,7 @@ public static class CharacterManager
             ", HInput: " + hInput + 
             ", WalkingTowardsBall: " + walkingTowardsBall);
 
-        if (dist <= attachDistance && raccoonGrounded && walkingTowardsBall)
+        if (dist <= attachDistance && raccoonGrounded && walkingTowardsBall && cooldown)
         {
             return true;
         }
