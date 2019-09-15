@@ -7,7 +7,7 @@ public class BallCharacterController : MonoBehaviour
     private Rigidbody rb;
     private float hInput = 0.0f;
 
-    public float attachedMoveDistance = 2.0f;
+    public float attachedMoveDistance = 4.0f;
 
     public static BallCharacterController instance = null;
     // Start is called before the first frame update
@@ -27,6 +27,10 @@ public class BallCharacterController : MonoBehaviour
         {
             //move with the raccoon
             hInput = Input.GetAxis("Horizontal");
+            Vector3 raccoonPos = RaccoonCharacterController.instance.transform.position;
+            Vector3 targetPos = new Vector3(raccoonPos.x + attachedMoveDistance * CharacterManager.AttachSide, transform.position.y, transform.position.z);
+            //rb.MovePosition(targetPos);
+            transform.position = targetPos; //not great for wall collision but only way to keep the movement smooth for now :/
         }
     }
 
@@ -34,8 +38,8 @@ public class BallCharacterController : MonoBehaviour
     {
         if (CharacterManager.CharactersAttached)
         {
-            Vector3 movement = new Vector3(hInput, 0, 0);
-            rb.MovePosition(rb.position + movement * RaccoonCharacterController.instance.moveSpeed * Time.fixedDeltaTime);
+            //Vector3 movement = new Vector3(hInput, 0, 0);
+            //rb.MovePosition(rb.position + movement * RaccoonCharacterController.instance.moveSpeed * Time.fixedDeltaTime);
         }
     }
 }

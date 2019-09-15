@@ -20,6 +20,10 @@ public class Spring : LevelObject
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.name == "PlayerRaccoon" || other.gameObject.name == "PlayerBall")
+        {
+            CharacterManager.DetachCharacters();
+        }
         Vector3 up = gameObject.transform.up;
         Vector3 newVelocity = new Vector3(up.x*force, up.y*force, 0);
         other.attachedRigidbody.velocity = newVelocity;
