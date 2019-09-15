@@ -51,8 +51,9 @@ public class RaccoonCharacterController : MonoBehaviour
             //TODO: add climbing update cycle
             if(IsHuggingClimbableWall())
             {
-                vInput = Input.GetAxis("Vertical") * 2f;
+                vInput = Input.GetAxis("Vertical");
                 GetComponent<RigidBodyGravityMod>().useGravity = false;
+                rb.velocity = new Vector3(0, 0, 0);
             }
             else
             {
