@@ -8,10 +8,14 @@ public class RaccoonCharacterController : MonoBehaviour
     public float jumpSpeed = 10.0f;
     public float moveSpeed = 15.0f;
 
+    //distance between collider and ground
     private float distToGround = 0.0f;
 
     private float hInput = 0.0f;
     private float vInput = 0.0f;
+
+    //whether in kick mode or not
+    private bool kickMode = false;
 
     private int currWallSide = 0; //-1 for wall to left, 1 for wall to right
     private float wallJumpCooldown = 0.5f; //cooldown until can reattach to wall
@@ -110,9 +114,9 @@ public class RaccoonCharacterController : MonoBehaviour
     public bool IsHuggingClimbableWall()
     {
         RaycastHit hitLeft;
-        Physics.Raycast(transform.position, Vector2.left, out hitLeft, 1f);
+        Physics.Raycast(transform.position, Vector2.left, out hitLeft, 1.5f);
         RaycastHit hitRight;
-        Physics.Raycast(transform.position, Vector2.right, out hitRight, 1f);
+        Physics.Raycast(transform.position, Vector2.right, out hitRight, 1.5f);
         bool leftValid = hitLeft.collider != null && hitLeft.collider.gameObject.CompareTag(GameConst.TAG_CLIMBABLE_WALL);
         bool rightValid = hitRight.collider != null && hitRight.collider.gameObject.CompareTag(GameConst.TAG_CLIMBABLE_WALL);
         bool movingTowardsWall = false;
