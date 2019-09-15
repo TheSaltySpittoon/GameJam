@@ -13,6 +13,10 @@ public class RaccoonCharacterController : MonoBehaviour
     private float hInput = 0.0f;
     private float vInput = 0.0f;
 
+    private int currWallSide = 0; //-1 for wall to left, 1 for wall to right
+    private float wallJumpCooldown = 0.5f; //cooldown until can reattach to wall
+    private float wallJumpTimer = 1.0f;
+
     public static RaccoonCharacterController instance = null;
 
     private Rigidbody rb;
@@ -36,10 +40,15 @@ public class RaccoonCharacterController : MonoBehaviour
             //jank to do this here, but need an update cycle for this cooldown
             CharacterManager.detachTimer += Time.deltaTime;
         }
+        if(wallJumpTimer < wallJumpCooldown)
+        {
+            wallJumpTimer += Time.deltaTime;
+        }
 
         hInput = Input.GetAxis("Horizontal");
         vInput = 0f;
         bool upPressed = Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W);
+        bool jumpPressed = Input.GetKeyDown(KeyCode.Space);
         
         if (!CharacterManager.CharactersAttached)
         {
@@ -73,16 +82,23 @@ public class RaccoonCharacterController : MonoBehaviour
             
         }
 
-        if(upPressed && IsGrounded())
+        if((upPressed || jumpPressed) && IsGrounded())
         {
             rb.velocity = new Vector3(0, jumpSpeed, 0);
             CharacterManager.DetachCharacters();
+        }
+        else if(jumpPressed && IsHuggingClimbableWall())
+        {
+            rb.velocity = new Vector3(-jumpSpeed * currWallSide * 0.8f, jumpSpeed, 0);
+            GetComponent<RigidBodyGravityMod>().useGravity = true;
+            wallJumpTimer = 0.0f;
         }
     }
 
     private void FixedUpdate()
     {
         Vector3 movement = new Vector3(hInput, vInput, 0);
+
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
     }
 
@@ -100,17 +116,19 @@ public class RaccoonCharacterController : MonoBehaviour
         bool leftValid = hitLeft.collider != null && hitLeft.collider.gameObject.CompareTag(GameConst.TAG_CLIMBABLE_WALL);
         bool rightValid = hitRight.collider != null && hitRight.collider.gameObject.CompareTag(GameConst.TAG_CLIMBABLE_WALL);
         bool movingTowardsWall = false;
-        if (leftValid || rightValid)
+        if ((leftValid || rightValid) && wallJumpTimer > wallJumpCooldown)
         {
             Vector3 raccoonPos = RaccoonCharacterController.instance.gameObject.transform.position;
             Vector3 wallPos;
             if(leftValid)
             {
                 wallPos = hitLeft.collider.gameObject.transform.position;
+                currWallSide = -1;
             }
             else
             {
                 wallPos = hitRight.collider.gameObject.transform.position;
+                currWallSide = 1;
             }
             Vector3 distDirection = wallPos - raccoonPos;
             movingTowardsWall = Math.Sign(hInput) == Math.Sign(distDirection.x);
