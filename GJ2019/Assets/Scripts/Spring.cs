@@ -20,8 +20,9 @@ public class Spring : LevelObject
 
     void OnTriggerEnter(Collider other)
     {
-        Vector3 up = force*gameObject.transform.up;
-        other.attachedRigidbody.velocity = up;
+        Vector3 up = gameObject.transform.up;
+        Vector3 newVelocity = new Vector3(up.x*force, up.y*force, 0);
+        other.attachedRigidbody.velocity = newVelocity;
     }
 
 }
