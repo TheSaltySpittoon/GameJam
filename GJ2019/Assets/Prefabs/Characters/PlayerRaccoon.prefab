@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!95 &4127922918266168608
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3459874586564612399}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b990f880185e945b496354e6813989f0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5232434221508880457
 GameObject:
   m_ObjectHideFlags: 0
@@ -13,6 +32,7 @@ GameObject:
   - component: {fileID: 7800430516937192534}
   - component: {fileID: 525775385094565714}
   - component: {fileID: 3425746616041688233}
+  - component: {fileID: 3099040667554269148}
   m_Layer: 0
   m_Name: PlayerRaccoon
   m_TagString: Untagged
@@ -52,6 +72,7 @@ MonoBehaviour:
   moveSpeed: 10
   wallDetectionRange: 1.5
   kickIndicator: {fileID: 4453443466624965303}
+  AnimCtrl: {fileID: 3099040667554269148}
   KickPower: 60
   KickRangeMin: 15
   KickRangeMax: 75
@@ -101,6 +122,19 @@ MonoBehaviour:
   gravityMod: 5
   terminalVelocity: 20
   useGravity: 1
+--- !u!114 &3099040667554269148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5232434221508880457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41290c2616f64455799fcfbe6ec6b69c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animCtrl: {fileID: 4127922918266168608}
 --- !u!1001 &4837460340014483494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,7 +155,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 5a41e2132c47640fca073fe622b14bed,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.12
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 5a41e2132c47640fca073fe622b14bed,
         type: 3}
@@ -170,6 +204,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a41e2132c47640fca073fe622b14bed, type: 3}
+--- !u!1 &3459874586564612399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 5a41e2132c47640fca073fe622b14bed,
+    type: 3}
+  m_PrefabInstance: {fileID: 4837460340014483494}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &457300364069380924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: 5a41e2132c47640fca073fe622b14bed,
