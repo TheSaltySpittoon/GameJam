@@ -18,6 +18,7 @@ public class Ground : LevelObject
     public bool movingHorizontal = true;
     private Vector3 startPoint;
     private Vector3 maxPosition;
+    private bool returnToStart = false;
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +51,21 @@ public class Ground : LevelObject
                 {
                     if (!button.GetComponent<Button>().isPushed)
                     {
-                        canMove = false;
+                        if (resets && !returnToStart && button.GetComponent<Button>().hasBeenPressed)
+                        {
+                            Debug.Log("flipping it");
+                                movingForward = !movingForward;
+                                returnToStart = true;
+                        }
+                        else
+                        {
+                            if (!returnToStart)
+                            {
+                                canMove = false;
+                            }
+                            
+                        }
+                        
                     }
                 }
                 else if (!button.GetComponent<Button>().weightSatisfied && !button.GetComponent<Button>().hasBeenPressed)
@@ -79,6 +94,7 @@ public class Ground : LevelObject
                 float enddistance = Vector3.Distance(maxPosition, newPosition);
                 if (startdistance > moveDistance || enddistance > moveDistance)
                 {
+                    returnToStart = false;
                     hasReachedEnd = true;
                     if (!stops)
                     {

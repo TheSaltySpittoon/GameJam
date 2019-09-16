@@ -149,7 +149,10 @@ public class RaccoonCharacterController : MonoBehaviour
         }
         Vector3 movement = new Vector3(hInput, targetV, 0);
 
-        rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        if (!kickMode)
+        {
+            rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+        }
 
         if(hInput != 0 && Math.Sign(hInput) != Math.Sign(transform.right.x) && !CharacterManager.CharactersAttached)
         {
