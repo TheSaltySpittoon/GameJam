@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ffb13c7f9416b475983d8fbf53262f7b
+guid: 4543a2fca780040e788d02da5db99b27
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Trashcan_MAT
-    second: {fileID: 2100000, guid: 0e423737e2c714a4ea529fd84b5edab0, type: 2}
+      name: WoodPanel_MAT
+    second: {fileID: 2100000, guid: b014dd4dd0aa743f19809df415f27e8c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
