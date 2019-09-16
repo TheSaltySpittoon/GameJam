@@ -167,7 +167,7 @@ public class RaccoonCharacterController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        bool isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        bool isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.5f);
         return isGrounded;
     }
 
