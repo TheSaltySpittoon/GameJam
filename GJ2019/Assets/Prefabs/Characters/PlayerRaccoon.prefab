@@ -130,8 +130,9 @@ MonoBehaviour:
   moveSpeed: 10
   wallDetectionRange: 1.5
   kickIndicator: {fileID: 4453443466624965303}
-  KickPower: 25
-  KickRange: 30
+  KickPower: 60
+  KickRangeMin: 15
+  KickRangeMax: 75
 --- !u!54 &7800430516937192534
 Rigidbody:
   m_ObjectHideFlags: 0
