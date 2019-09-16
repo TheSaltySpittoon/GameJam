@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: RickCoon_Rig.ma
-//Last modified: Sun, Sep 15, 2019 06:36:01 PM
+//Last modified: Sun, Sep 15, 2019 06:54:42 PM
 //Codeset: UTF-8
 requires maya "2018ff09";
 requires "mtoa" "3.1.1.1";
@@ -14211,7 +14211,7 @@ createNode lambert -n "White";
 createNode shadingEngine -n "lambert3SG";
 	rename -uid "17978F94-1148-D056-D569-C3AEE2BB8208";
 	setAttr ".ihi" 0;
-	setAttr -s 8 ".dsm";
+	setAttr -s 7 ".dsm";
 	setAttr ".ro" yes;
 	setAttr -s 2 ".gn";
 createNode materialInfo -n "materialInfo2";
@@ -14259,7 +14259,7 @@ createNode groupId -n "groupId12";
 	rename -uid "820642D5-4549-F35A-5BA1-FE9EBD9A073F";
 	setAttr ".ihi" 0;
 createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
-	rename -uid "AB1ECA97-B64F-F85B-AB4E-45915BC60CD8";
+	rename -uid "C7CE5E69-8649-0ED7-69B4-92B79EDC8500";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -141.66666103733934 -178.57142147563781 ;
 	setAttr ".tgi[0].vh" -type "double2" 140.47618489416843 184.52380219149242 ;
