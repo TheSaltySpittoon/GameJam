@@ -151,7 +151,7 @@ public class RaccoonCharacterController : MonoBehaviour
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
 
-        if(Math.Sign(hInput) != Math.Sign(transform.right.x) && !CharacterManager.CharactersAttached)
+        if(hInput != 0 && Math.Sign(hInput) != Math.Sign(transform.right.x) && !CharacterManager.CharactersAttached)
         {
             transform.RotateAround(transform.position, Vector3.up, 180);
         }

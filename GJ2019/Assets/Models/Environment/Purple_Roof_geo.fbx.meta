@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ffb13c7f9416b475983d8fbf53262f7b
+guid: 428d303b5163e4f0a99a33b130e54455
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Trashcan_MAT
-    second: {fileID: 2100000, guid: 0e423737e2c714a4ea529fd84b5edab0, type: 2}
+      name: Purple_Roof_MAT
+    second: {fileID: 2100000, guid: 7d7c123e0bb87481c8c41dfb9e426c26, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
