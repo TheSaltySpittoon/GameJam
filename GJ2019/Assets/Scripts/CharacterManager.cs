@@ -4,7 +4,7 @@ using UnityEngine;
 public static class CharacterManager
 {
 	public static bool CharactersAttached = false;
-    public static float AttachSide = 0.0f; //1.0f for raccoon->ball, -1.0f for ball<-raccoon
+    public static int AttachSide = 0; //1 for raccoon->ball, -1 for ball<-raccoon
 
     private static float attachDistance = 2.5f;
 
