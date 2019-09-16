@@ -10,6 +10,8 @@ public class LevelEnder : LevelObject
     private bool ricIsHere = false;
     private bool bolIsHere = false;
 
+    public bool requiresBall = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,7 @@ public class LevelEnder : LevelObject
     // Update is called once per frame
     void Update()
     {
-        if (ricIsHere && bolIsHere)
+        if (ricIsHere && (bolIsHere || !requiresBall))
         {
             //SceneManager.LoadScene(nextScene);
             string currScene = SceneManager.GetActiveScene().name;

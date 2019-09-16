@@ -37,6 +37,7 @@ public class Ground : LevelObject
         }
         
 
+
     }
 
     // Update is called once per frame
@@ -49,9 +50,9 @@ public class Ground : LevelObject
             {
                 if (requiresPressed)
                 {
-                    if (!button.GetComponent<Button>().isPushed)
+                    if (!button.GetComponent<ActivateableObject>().isPushed)
                     {
-                        if (resets && !returnToStart && button.GetComponent<Button>().hasBeenPressed)
+                        if (resets && !returnToStart && button.GetComponent<ActivateableObject>().hasBeenPressed)
                         {
                             Debug.Log("flipping it");
                                 movingForward = !movingForward;
@@ -68,9 +69,21 @@ public class Ground : LevelObject
                         
                     }
                 }
-                else if (!button.GetComponent<Button>().weightSatisfied && !button.GetComponent<Button>().hasBeenPressed)
+                else
                 {
-                    canMove = false;
+                    if (button.GetComponent<Button>() != null)
+                    {
+                        if (!button.GetComponent<Button>().weightSatisfied && !button.GetComponent<ActivateableObject>().hasBeenPressed)
+                        {
+                            canMove = false;
+                        }
+                    }
+                    else if (!button.GetComponent<ActivateableObject>().hasBeenPressed)
+                    {
+                        canMove = false;
+                    }
+                    
+                    
                 }
             }
 
