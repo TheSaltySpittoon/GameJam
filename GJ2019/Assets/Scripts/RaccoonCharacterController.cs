@@ -23,6 +23,7 @@ public class RaccoonCharacterController : MonoBehaviour
     public float KickPower = 50f;
     public float KickRangeMin = 15;
     public float KickRangeMax = 75;
+    public float KickIndicatorSpeed = 30f;
 
     private bool canClimb = false;
 
@@ -48,6 +49,7 @@ public class RaccoonCharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("Right: " + transform.right);
         if(CharacterManager.detachTimer < CharacterManager.attachCooldown)
         {
             //jank to do this here, but need an update cycle for this cooldown
@@ -103,7 +105,8 @@ public class RaccoonCharacterController : MonoBehaviour
                     || currAngle < KickRangeMin && vInput > 0
                     || currAngle < KickRangeMax && currAngle > KickRangeMin)
                 {
-                    kickIndicator.transform.RotateAround(kickIndicator.transform.position, Vector3.forward, vInput * 30f * Time.deltaTime * CharacterManager.AttachSide);
+                    kickIndicator.transform.RotateAround(kickIndicator.transform.position, Vector3.forward, vInput
+                        * KickIndicatorSpeed * Time.deltaTime * CharacterManager.AttachSide);
                 }
 
                 if (zInput)
@@ -147,11 +150,17 @@ public class RaccoonCharacterController : MonoBehaviour
         Vector3 movement = new Vector3(hInput, targetV, 0);
 
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+
+        if(Math.Sign(hInput) != Math.Sign(transform.right.x) && !CharacterManager.CharactersAttached)
+        {
+            transform.RotateAround(transform.position, Vector3.up, 180);
+        }
     }
 
     public bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.01f);
+        bool isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        return isGrounded;
     }
 
     public bool IsHuggingClimbableWall()
