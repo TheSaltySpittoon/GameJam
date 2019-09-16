@@ -136,6 +136,7 @@ public class RaccoonCharacterController : MonoBehaviour
         {
             rb.velocity = new Vector3(-jumpSpeed * currWallSide * 0.8f, jumpSpeed, 0);
             GetComponent<RigidBodyGravityMod>().useGravity = true;
+            transform.RotateAround(transform.position, Vector3.up, 180);
             wallJumpTimer = 0.0f;
         }
     }
@@ -166,7 +167,7 @@ public class RaccoonCharacterController : MonoBehaviour
 
     public bool IsGrounded()
     {
-        bool isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        bool isGrounded = Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.5f);
         return isGrounded;
     }
 
