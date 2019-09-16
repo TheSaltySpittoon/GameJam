@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Button : LevelObject
+public class Button : ActivateableObject
 {
 
     public float weightRequired;
     public bool weightSatisfied;
-    public bool isPushed;
     public float sinkDistance;
     public float compressionSpeed;
     public bool resets;
@@ -16,8 +15,6 @@ public class Button : LevelObject
     private Vector3 startingPosition;
     private Vector3 endPosition;
     private Vector3 negativeUp;
-
-    public bool hasBeenPressed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -95,11 +92,6 @@ public class Button : LevelObject
             percent = Vector3.Distance(startingPosition, gameObject.transform.position)/sinkDistance;
         }
         return percent;
-    }
-
-    public void ConsumePress()
-    {
-        hasBeenPressed = false;
     }
 }
 

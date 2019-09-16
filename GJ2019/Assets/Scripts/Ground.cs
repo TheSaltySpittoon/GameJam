@@ -37,6 +37,7 @@ public class Ground : LevelObject
         }
         
 
+
     }
 
     // Update is called once per frame
@@ -49,9 +50,9 @@ public class Ground : LevelObject
             {
                 if (requiresPressed)
                 {
-                    if (!button.GetComponent<Button>().isPushed)
+                    if (!button.GetComponent<ActivateableObject>().isPushed)
                     {
-                        if (resets && !returnToStart && button.GetComponent<Button>().hasBeenPressed)
+                        if (resets && !returnToStart && button.GetComponent<ActivateableObject>().hasBeenPressed)
                         {
                             Debug.Log("flipping it");
                                 movingForward = !movingForward;
