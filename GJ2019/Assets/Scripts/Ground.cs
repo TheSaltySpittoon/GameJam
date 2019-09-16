@@ -69,9 +69,21 @@ public class Ground : LevelObject
                         
                     }
                 }
-                else if (!button.GetComponent<Button>().weightSatisfied && !button.GetComponent<Button>().hasBeenPressed)
+                else
                 {
-                    canMove = false;
+                    if (button.GetComponent<Button>() != null)
+                    {
+                        if (!button.GetComponent<Button>().weightSatisfied && !button.GetComponent<ActivateableObject>().hasBeenPressed)
+                        {
+                            canMove = false;
+                        }
+                    }
+                    else if (!button.GetComponent<ActivateableObject>().hasBeenPressed)
+                    {
+                        canMove = false;
+                    }
+                    
+                    
                 }
             }
 
