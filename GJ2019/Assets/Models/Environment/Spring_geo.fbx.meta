@@ -9,7 +9,12 @@ ModelImporter:
   - first:
       74: 2040371939976457417
     second: Stretch
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: blinn1
+    second: {fileID: 2100000, guid: 3690c8effbc384293a558ebca84de0c5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
