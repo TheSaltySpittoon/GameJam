@@ -1,6 +1,6 @@
 //Maya ASCII 2018ff09 scene
 //Name: walk_cycle_01.ma
-//Last modified: Sun, Sep 15, 2019 07:46:13 PM
+//Last modified: Sun, Sep 15, 2019 08:14:21 PM
 //Codeset: UTF-8
 file -rdi 1 -ns ":" -rfn "RickCoon_Rig_skinnedRN" -op "v=0;" -typ "mayaAscii"
 		 "/Users/jackypascal/Documents/GameJam.git/Art and Maya Files/Riccoon_Rig1.ma";
@@ -130,7 +130,7 @@ createNode camera -n "leftShape2" -p "left1";
 	rename -uid "9895BE75-114B-58F7-D2C3-4F83208CBBA1";
 	setAttr -k off ".v";
 	setAttr ".rnd" no;
-	setAttr ".coi" 999.98786799801667;
+	setAttr ".coi" 999.98786799801678;
 	setAttr ".ow" 6.1301946963550584;
 	setAttr ".imn" -type "string" "left1";
 	setAttr ".den" -type "string" "left1_depth";
@@ -140,25 +140,25 @@ createNode camera -n "leftShape2" -p "left1";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "414DE286-C24C-0AB9-814A-AC9D5157CDA5";
+	rename -uid "BF112E0C-C64B-6A98-AEF8-619FAB24EA37";
 	setAttr -s 6 ".lnk";
 	setAttr -s 6 ".slnk";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "4081198D-EA4F-C2CC-181B-558251DC2859";
+	rename -uid "D468D2F0-2244-966C-59EA-F0B9B0216D3E";
 	setAttr ".cdl" 1;
-	setAttr ".dli[1]"  1;
+	setAttr -s 2 ".dli[1]"  1;
 	setAttr -s 2 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "44AE7A1F-684A-DE93-8CA8-9588A6864381";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "5E18E148-094F-E344-8EB8-96AA245628D9";
+	rename -uid "D46B918C-894F-D4E4-53D1-B7994A134026";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "F05C316F-BB4F-0E54-F1F3-23B1930C78F2";
 	setAttr ".g" yes;
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "8069E6CD-4440-09B2-BD0C-07A101ECF356";
+	rename -uid "1F0DB6EF-3B49-772D-E993-859FBBA5E046";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "2CEE88AA-A647-1BFC-4265-82A9FD13293F";
+	rename -uid "151977C2-884D-BB0C-2F9B-0FB3DB5480F0";
 createNode script -n "uiConfigurationScriptNode1";
 	rename -uid "19AA3DEA-8B44-8458-C0E1-8FA1F976DF69";
 	setAttr ".b" -type "string" (
@@ -172,10 +172,10 @@ createNode script -n "uiConfigurationScriptNode1";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Front View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Front View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"wireframe\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 0\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 549\n            -height 326\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"left1\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 402\n            -height 324\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"left1\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n"
 		+ "            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n            -xray 0\n            -jointXray 0\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n"
 		+ "            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 0\n            -imagePlane 1\n            -joints 0\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n"
-		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 549\n            -height 326\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
+		+ "            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 0\n            -captureSequenceNumber -1\n            -width 402\n            -height 324\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n"
 		+ "\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n"
 		+ "            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n"
 		+ "            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n"
@@ -203,11 +203,11 @@ createNode script -n "uiConfigurationScriptNode1";
 		+ "                -lowQualityLighting 0\n                -maximumNumHardwareLights 0\n                -occlusionCulling 0\n                -shadingModel 0\n                -useBaseRenderer 0\n                -useReducedRenderer 0\n                -smallObjectCulling 0\n                -smallObjectThreshold -1 \n                -interactiveDisableShadows 0\n                -interactiveBackFaceCull 0\n                -sortTransparent 1\n                -controllers 1\n                -nurbsCurves 1\n                -nurbsSurfaces 1\n                -polymeshes 1\n                -subdivSurfaces 1\n                -planes 1\n                -lights 1\n                -cameras 1\n                -controlVertices 1\n                -hulls 1\n                -grid 1\n                -imagePlane 1\n                -joints 1\n                -ikHandles 1\n                -deformers 1\n                -dynamics 1\n                -particleInstancers 1\n                -fluids 1\n                -hairSystems 1\n                -follicles 1\n                -nCloths 1\n"
 		+ "                -nParticles 1\n                -nRigids 1\n                -dynamicConstraints 1\n                -locators 1\n                -manipulators 1\n                -pluginShapes 1\n                -dimensions 1\n                -handles 1\n                -pivots 1\n                -textures 1\n                -strokes 1\n                -motionTrails 1\n                -clipGhosts 1\n                -greasePencils 1\n                -shadows 0\n                -captureSequenceNumber -1\n                -width 0\n                -height 0\n                -sceneRenderFilter 0\n                -displayMode \"centerEye\" \n                -viewColor 0 0 0 1 \n                -useCustomBackground 1\n                $editorName;\n            stereoCameraView -e -viewSelected 0 $editorName;\n            stereoCameraView -e \n                -pluginObjects \"gpuCacheDisplayFilter\" 1 \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n"
 		+ "        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"top3\\\" -ps 1 50 72 -ps 2 50 72 -ps 3 100 28 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Front View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 549\\n    -height 326\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 549\\n    -height 326\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 402\\n    -height 324\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Front View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"persp\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"wireframe\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 402\\n    -height 324\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"left1\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 549\\n    -height 326\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"left1\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 549\\n    -height 326\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"left1\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 402\\n    -height 324\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -camera \\\"left1\\\" \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 0\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 0\\n    -imagePlane 1\\n    -joints 0\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 0\\n    -captureSequenceNumber -1\\n    -width 402\\n    -height 324\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t-ap false\n\t\t\t\t\t(localizedPanelLabel(\"Graph Editor\")) \n\t\t\t\t\t\"scriptedPanel\"\n"
 		+ "\t\t\t\t\t\"$panelName = `scriptedPanel -unParent  -type \\\"graphEditor\\\" -l (localizedPanelLabel(\\\"Graph Editor\\\")) -mbv $menusOkayInPanels `;\\n\\n\\t\\t\\t$editorName = ($panelName+\\\"OutlineEd\\\");\\n            outlinerEditor -e \\n                -showShapes 1\\n                -showAssignedMaterials 0\\n                -showTimeEditor 1\\n                -showReferenceNodes 0\\n                -showReferenceMembers 0\\n                -showAttributes 1\\n                -showConnected 1\\n                -showAnimCurvesOnly 1\\n                -showMuteInfo 0\\n                -organizeByLayer 1\\n                -organizeByClip 1\\n                -showAnimLayerWeight 1\\n                -autoExpandLayers 1\\n                -autoExpand 1\\n                -showDagOnly 0\\n                -showAssets 1\\n                -showContainedOnly 0\\n                -showPublishedAsConnected 0\\n                -showParentContainers 1\\n                -showContainerContents 0\\n                -ignoreDagHierarchy 0\\n                -expandConnections 1\\n                -showUpstreamCurves 1\\n                -showUnitlessCurves 1\\n                -showCompounds 0\\n                -showLeafs 1\\n                -showNumericAttrsOnly 1\\n                -highlightActive 0\\n                -autoSelectNewObjects 1\\n                -doNotSelectNewObjects 0\\n                -dropIsParent 1\\n                -transmitFilters 1\\n                -setFilter \\\"0\\\" \\n                -showSetMembers 0\\n                -allowMultiSelection 1\\n                -alwaysToggleSelect 0\\n                -directSelect 0\\n                -isSet 0\\n                -isSetMember 0\\n                -displayMode \\\"DAG\\\" \\n                -expandObjects 0\\n                -setsIgnoreFilters 1\\n                -containersIgnoreFilters 0\\n                -editAttrName 0\\n                -showAttrValues 0\\n                -highlightSecondary 0\\n                -showUVAttrsOnly 0\\n                -showTextureNodesOnly 0\\n                -attrAlphaOrder \\\"default\\\" \\n                -animLayerFilterOptions \\\"allAffecting\\\" \\n                -sortOrder \\\"none\\\" \\n                -longNames 0\\n                -niceNames 1\\n                -showNamespace 1\\n                -showPinIcons 1\\n                -mapMotionTrails 1\\n                -ignoreHiddenAttribute 0\\n                -ignoreOutlinerColor 0\\n                -renderFilterVisible 0\\n                -selectionOrder \\\"display\\\" \\n                -expandAttribute 1\\n                $editorName;\\n\\n\\t\\t\\t$editorName = ($panelName+\\\"GraphEd\\\");\\n            animCurveEditor -e \\n                -displayKeys 1\\n                -displayTangents 0\\n                -displayActiveKeys 0\\n                -displayActiveKeyTangents 1\\n                -displayInfinities 0\\n                -displayValues 0\\n                -autoFit 1\\n                -autoFitTime 0\\n                -snapTime \\\"integer\\\" \\n                -snapValue \\\"none\\\" \\n                -showResults \\\"off\\\" \\n                -showBufferCurves \\\"off\\\" \\n                -smoothness \\\"fine\\\" \\n                -resultSamples 1\\n                -resultScreenSamples 0\\n                -resultUpdate \\\"delayed\\\" \\n                -showUpstreamCurves 1\\n                -showCurveNames 0\\n                -showActiveCurveNames 0\\n                -clipTime \\\"on\\\" \\n                -stackedCurves 0\\n                -stackedCurvesMin -1\\n                -stackedCurvesMax 1\\n                -stackedCurvesSpace 0.2\\n                -displayNormalized 0\\n                -preSelectionHighlight 0\\n                -constrainDrag 0\\n                -classicMode 1\\n                -valueLinesToggle 1\\n                -outliner \\\"graphEditor1OutlineEd\\\" \\n                $editorName\"\n"
 		+ "\t\t\t\t\t\"scriptedPanel -edit -l (localizedPanelLabel(\\\"Graph Editor\\\")) -mbv $menusOkayInPanels  $panelName;\\n\\n\\t\\t\\t$editorName = ($panelName+\\\"OutlineEd\\\");\\n            outlinerEditor -e \\n                -showShapes 1\\n                -showAssignedMaterials 0\\n                -showTimeEditor 1\\n                -showReferenceNodes 0\\n                -showReferenceMembers 0\\n                -showAttributes 1\\n                -showConnected 1\\n                -showAnimCurvesOnly 1\\n                -showMuteInfo 0\\n                -organizeByLayer 1\\n                -organizeByClip 1\\n                -showAnimLayerWeight 1\\n                -autoExpandLayers 1\\n                -autoExpand 1\\n                -showDagOnly 0\\n                -showAssets 1\\n                -showContainedOnly 0\\n                -showPublishedAsConnected 0\\n                -showParentContainers 1\\n                -showContainerContents 0\\n                -ignoreDagHierarchy 0\\n                -expandConnections 1\\n                -showUpstreamCurves 1\\n                -showUnitlessCurves 1\\n                -showCompounds 0\\n                -showLeafs 1\\n                -showNumericAttrsOnly 1\\n                -highlightActive 0\\n                -autoSelectNewObjects 1\\n                -doNotSelectNewObjects 0\\n                -dropIsParent 1\\n                -transmitFilters 1\\n                -setFilter \\\"0\\\" \\n                -showSetMembers 0\\n                -allowMultiSelection 1\\n                -alwaysToggleSelect 0\\n                -directSelect 0\\n                -isSet 0\\n                -isSetMember 0\\n                -displayMode \\\"DAG\\\" \\n                -expandObjects 0\\n                -setsIgnoreFilters 1\\n                -containersIgnoreFilters 0\\n                -editAttrName 0\\n                -showAttrValues 0\\n                -highlightSecondary 0\\n                -showUVAttrsOnly 0\\n                -showTextureNodesOnly 0\\n                -attrAlphaOrder \\\"default\\\" \\n                -animLayerFilterOptions \\\"allAffecting\\\" \\n                -sortOrder \\\"none\\\" \\n                -longNames 0\\n                -niceNames 1\\n                -showNamespace 1\\n                -showPinIcons 1\\n                -mapMotionTrails 1\\n                -ignoreHiddenAttribute 0\\n                -ignoreOutlinerColor 0\\n                -renderFilterVisible 0\\n                -selectionOrder \\\"display\\\" \\n                -expandAttribute 1\\n                $editorName;\\n\\n\\t\\t\\t$editorName = ($panelName+\\\"GraphEd\\\");\\n            animCurveEditor -e \\n                -displayKeys 1\\n                -displayTangents 0\\n                -displayActiveKeys 0\\n                -displayActiveKeyTangents 1\\n                -displayInfinities 0\\n                -displayValues 0\\n                -autoFit 1\\n                -autoFitTime 0\\n                -snapTime \\\"integer\\\" \\n                -snapValue \\\"none\\\" \\n                -showResults \\\"off\\\" \\n                -showBufferCurves \\\"off\\\" \\n                -smoothness \\\"fine\\\" \\n                -resultSamples 1\\n                -resultScreenSamples 0\\n                -resultUpdate \\\"delayed\\\" \\n                -showUpstreamCurves 1\\n                -showCurveNames 0\\n                -showActiveCurveNames 0\\n                -clipTime \\\"on\\\" \\n                -stackedCurves 0\\n                -stackedCurvesMin -1\\n                -stackedCurvesMax 1\\n                -stackedCurvesSpace 0.2\\n                -displayNormalized 0\\n                -preSelectionHighlight 0\\n                -constrainDrag 0\\n                -classicMode 1\\n                -valueLinesToggle 1\\n                -outliner \\\"graphEditor1OutlineEd\\\" \\n                $editorName\"\n"
@@ -839,7 +839,9 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN"
 		"RickCoon_Rig_skinnedRN" 0
 		"modelRN" 0
-		"RickCoon_Rig_skinnedRN" 1599
+		"RickCoon_Rig_skinnedRN" 1614
+		2 "|Group|Main" "rotate" " -type \"double3\" 0 -32.46441720328626701 0"
+		2 "|Group|Main" "rotateY" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetHip_R|FKExtraHip_R" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetHip_R|FKExtraHip_R" 
@@ -903,7 +905,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M" 
-		"rotate" " -type \"double3\" 3.52947982634411694 -8.67365813002541053 -7.82629071926210074"
+		"rotate" " -type \"double3\" 5.00335290529255605 11.3727308347072178 -12.81348546224997342"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M" 
 		"rotateX" " -av"
@@ -1129,7 +1131,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R" 
-		"translate" " -type \"double3\" 0.03557964130144671 0.22722034973249167 -0.016572560451424165"
+		"translate" " -type \"double3\" 0.033884285574030636 0.21639339062852794 -0.015782884551062335"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R" 
 		"translateX" " -av"
@@ -1138,7 +1140,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R" 
-		"rotate" " -type \"double3\" -39.81825511151048858 11.82895321937025734 71.16628526823086531"
+		"rotate" " -type \"double3\" -29.13536251461447435 13.80693551695243393 54.87215330909771183"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R" 
 		"rotateX" " -av"
@@ -1171,7 +1173,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R|FKXShoulder_R|FKOffsetElbow_R|FKExtraElbow_R|FKElbow_R" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R|FKXShoulder_R|FKOffsetElbow_R|FKExtraElbow_R|FKElbow_R" 
-		"rotate" " -type \"double3\" -13.28564903699975552 -24.24656880655033575 9.64027435981204128"
+		"rotate" " -type \"double3\" -12.65259315550604313 -23.09122946661433673 4.41803204421559403"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R|FKXShoulder_R|FKOffsetElbow_R|FKExtraElbow_R|FKElbow_R" 
 		"rotateX" " -av"
@@ -1225,7 +1227,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M" 
-		"translate" " -type \"double3\" 0.095135542436571283 0.006404246608583704 0.0119799139333408"
+		"translate" " -type \"double3\" 0.039610201028936504 0.0026664429413855969 0.0049879023870112787"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M" 
 		"translateX" " -av"
@@ -1234,7 +1236,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M" 
-		"rotate" " -type \"double3\" 6.94352825452901001 -6.76487920768755391 -5.93454924794264205"
+		"rotate" " -type \"double3\" 17.06703720318668616 2.06348909440223727 -11.93797259368275121"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M" 
 		"rotateX" " -av"
@@ -1387,7 +1389,8 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_L|FKExtraScapula_L|FKScapula_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_L|FKExtraScapula_L|FKScapula_L" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" -0.26393050822162967 -0.0079108978102044383 0.11882916918091854"
+		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_L|FKExtraScapula_L|FKScapula_L" 
 		"rotateX" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_L|FKExtraScapula_L|FKScapula_L" 
@@ -1445,7 +1448,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L" 
-		"translate" " -type \"double3\" -0.010966227939321335 -0.028737680978658652 0.002571430933178145"
+		"translate" " -type \"double3\" -0.00501189318866047 -0.04603122070802957 0.0033573365621096295"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L" 
 		"translateX" " -av"
@@ -1454,7 +1457,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L" 
-		"rotate" " -type \"double3\" 9.20145299981391318 65.88440574788242543 -32.60596731243651192"
+		"rotate" " -type \"double3\" -1.05399611765728363 52.12712409215481557 -17.365802988962173"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L" 
 		"rotateX" " -av"
@@ -1487,7 +1490,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L|FKXShoulder_L|FKOffsetElbow_L|FKExtraElbow_L|FKElbow_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L|FKXShoulder_L|FKOffsetElbow_L|FKExtraElbow_L|FKElbow_L" 
-		"rotate" " -type \"double3\" 3.7055474088707161 0.018306795817023654 -3.20699766629292249"
+		"rotate" " -type \"double3\" -2.69146070670221826 -4.91196832346073986 0.93980415750637125"
 		
 		2 "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_L|FKOffsetShoulder_L|FKGlobalStaticShoulder_L|FKGlobalShoulder_L|FKExtraShoulder_L|FKShoulder_L|FKXShoulder_L|FKOffsetElbow_L|FKExtraElbow_L|FKElbow_L" 
 		"rotateX" " -av"
@@ -1510,7 +1513,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_R|IKExtraLeg_R|IKLeg_R" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_R|IKExtraLeg_R|IKLeg_R" 
-		"translate" " -type \"double3\" -0.25732448776924927 0.25744173948585103 -0.11240447373721595"
+		"translate" " -type \"double3\" 0.034920432094168952 0.10198363228324599 -0.26027438003426251"
 		
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_R|IKExtraLeg_R|IKLeg_R" 
 		"translateX" " -av"
@@ -1655,19 +1658,17 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|PoleOffsetLeg_R|PoleExtraLeg_R|PoleLeg_R" 
 		"translateX" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|PoleOffsetLeg_R|PoleExtraLeg_R|PoleLeg_R" 
-		"follow" " -av -k 1"
-		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|PoleOffsetLeg_R|PoleExtraLeg_R|PoleLeg_R" 
 		"lock" " -av -k 1 0"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKSplineTailHandle_M" "translate" 
-		" -type \"double3\" -0.019990201483209093 0.63726413241312785 -1.43771985521251988"
+		" -type \"double3\" 0.62752609756552757 0.52189901095998315 -1.31126889803182389"
 		
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKSplineTailHandle_M" "rotate" 
-		" -type \"double3\" 15.39518741359011145 89.20665698234274998 -165.16784765649623523"
+		" -type \"double3\" 170.44451025448998394 66.22476335530676295 -3.271023760840988"
 		
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetcvSplineTail1_M|IKExtracvSplineTail1_M" 
 		"translate" " -type \"double3\" 3.6394834067365879e-07 0 0"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetcvSplineTail1_M|IKExtracvSplineTail1_M" 
-		"rotate" " -type \"double3\" 0 -4.3562729902121695e-05 0"
+		"rotate" " -type \"double3\" 0 -4.3562729902121702e-05 0"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetcvSplineTail1_M|IKExtracvSplineTail1_M|IKcvSplineTail1_M" 
 		"visibility" " 1"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetcvSplineTail1_M|IKExtracvSplineTail1_M|IKcvSplineTail1_M" 
@@ -1745,8 +1746,6 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSplineTail4_M|IKExtraSplineTail4_M|IKSplineTail4_M" 
 		"stretchy" " -k 1 10"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSplineTail4_M|IKExtraSplineTail4_M|IKSplineTail4_M" 
-		"follow" " -k 1"
-		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSplineTail4_M|IKExtraSplineTail4_M|IKSplineTail4_M" 
 		"volume" " -k 1 10"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSplineTail1_M|IKOffsetSplineTail1_M|IKExtraSplineTail1_M" 
 		"translate" " -type \"double3\" -1.9484821810245025e-07 0 0"
@@ -1797,9 +1796,9 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|PoleOffsetArm_R|PoleExtraArm_R|PoleArm_R" 
 		"lock" " -k 1 0"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKSpineHandle_M" "translate" 
-		" -type \"double3\" -4.2614214733971424e-05 0.92898648132015538 0.15146625315591195"
+		" -type \"double3\" 0.00076905057523764427 0.82552671578427939 0.15170498308674985"
 		
-		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKSpineHandle_M" "rotate" " -type \"double3\" 91.07266378648624539 0.3884888950691065 90.56209944762615294"
+		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKSpineHandle_M" "rotate" " -type \"double3\" 74.8542377642457808 -2.99992896995670177 84.35275382897623331"
 		
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetcvSpine1_M|IKExtracvSpine1_M" 
 		"translate" " -type \"double3\" 0 0 0"
@@ -1870,7 +1869,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSpine3_M|IKExtraSpine3_M|IKSpine3_M" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSpine3_M|IKExtraSpine3_M|IKSpine3_M" 
-		"rotate" " -type \"double3\" -0.095064919017674041 -0.26574938021082495 0.39304492047459455"
+		"rotate" " -type \"double3\" 1.05394752186588936 2.94656559766763815 -4.3582973760932946"
 		
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSpine3_M|IKExtraSpine3_M|IKSpine3_M" 
 		"rotateX" " -av"
@@ -1891,15 +1890,13 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSpine3_M|IKExtraSpine3_M|IKSpine3_M" 
 		"stretchy" " -av -k 1 10"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSpine3_M|IKExtraSpine3_M|IKSpine3_M" 
-		"follow" " -av -k 1"
-		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetSpine3_M|IKExtraSpine3_M|IKSpine3_M" 
 		"volume" " -av -k 1 10"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSpine1_M|IKOffsetSpine1_M|IKExtraSpine1_M" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSpine1_M|IKOffsetSpine1_M|IKExtraSpine1_M|IKSpine1_M" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSpine1_M|IKOffsetSpine1_M|IKExtraSpine1_M|IKSpine1_M" 
-		"translate" " -type \"double3\" 0 0.0022561471365781759 0"
+		"translate" " -type \"double3\" 0 0.025017768165038458 0"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSpine1_M|IKOffsetSpine1_M|IKExtraSpine1_M|IKSpine1_M" 
 		"translateX" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSpine1_M|IKOffsetSpine1_M|IKExtraSpine1_M|IKSpine1_M" 
@@ -1907,7 +1904,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSpine1_M|IKOffsetSpine1_M|IKExtraSpine1_M|IKSpine1_M" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSpine1_M|IKOffsetSpine1_M|IKExtraSpine1_M|IKSpine1_M" 
-		"rotate" " -type \"double3\" -0.14819551803972481 -0.63222469402248782 -0.45235409421870315"
+		"rotate" " -type \"double3\" -1.64329757279868094 -7.01055820643678018 5.01625655976676477"
 		
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetConstrainedSpine1_M|IKOffsetSpine1_M|IKExtraSpine1_M|IKSpine1_M" 
 		"rotateX" " -av"
@@ -1934,7 +1931,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L" 
-		"translate" " -type \"double3\" -0.084155718542417934 0 0.11376542110188931"
+		"translate" " -type \"double3\" -0.083978671116541156 0 0.21846621707889324"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L" 
 		"translateX" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L" 
@@ -1986,7 +1983,8 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L|IKLegFootRockInnerPivot_L|IKLegFootRockOuterPivot_L|RollOffsetHeel_L|RollRollerHeel_L|RollExtraHeel_L|RollHeel_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L|IKLegFootRockInnerPivot_L|IKLegFootRockOuterPivot_L|RollOffsetHeel_L|RollRollerHeel_L|RollExtraHeel_L|RollHeel_L" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 2.01214128576257867 -7.00328838815274057 -4.31222935247514894"
+		
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L|IKLegFootRockInnerPivot_L|IKLegFootRockOuterPivot_L|RollOffsetHeel_L|RollRollerHeel_L|RollExtraHeel_L|RollHeel_L" 
 		"rotateY" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L|IKLegFootRockInnerPivot_L|IKLegFootRockOuterPivot_L|RollOffsetHeel_L|RollRollerHeel_L|RollExtraHeel_L|RollHeel_L" 
@@ -2012,7 +2010,8 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L|IKLegFootRockInnerPivot_L|IKLegFootRockOuterPivot_L|RollOffsetHeel_L|RollRollerHeel_L|RollExtraHeel_L|RollHeel_L|RollOffsetToesEnd_L|RollRollerToesEnd_L|RollExtraToesEnd_L|RollToesEnd_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L|IKLegFootRockInnerPivot_L|IKLegFootRockOuterPivot_L|RollOffsetHeel_L|RollRollerHeel_L|RollExtraHeel_L|RollHeel_L|RollOffsetToesEnd_L|RollRollerToesEnd_L|RollExtraToesEnd_L|RollToesEnd_L" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 2.01214128576257867 -7.00328838815274057 -4.31222935247514894"
+		
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L|IKLegFootRockInnerPivot_L|IKLegFootRockOuterPivot_L|RollOffsetHeel_L|RollRollerHeel_L|RollExtraHeel_L|RollHeel_L|RollOffsetToesEnd_L|RollRollerToesEnd_L|RollExtraToesEnd_L|RollToesEnd_L" 
 		"rotateY" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetLeg_L|IKExtraLeg_L|IKLeg_L|IKLegFootRockInnerPivot_L|IKLegFootRockOuterPivot_L|RollOffsetHeel_L|RollRollerHeel_L|RollExtraHeel_L|RollHeel_L|RollOffsetToesEnd_L|RollRollerToesEnd_L|RollExtraToesEnd_L|RollToesEnd_L" 
@@ -2083,8 +2082,6 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|PoleOffsetLeg_L|PoleExtraLeg_L|PoleLeg_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|PoleOffsetLeg_L|PoleExtraLeg_L|PoleLeg_L" 
-		"follow" " -av -k 1"
-		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|PoleOffsetLeg_L|PoleExtraLeg_L|PoleLeg_L" 
 		"lock" " -av -k 1 0"
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|IKOffsetArm_L|IKExtraArm_L" 
 		"translate" " -type \"double3\" -0.44965994460942893 0 -0.97451925515908444"
@@ -2121,8 +2118,6 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|IKSystem|IKHandle|PoleOffsetArm_L|PoleExtraArm_L|PoleArm_L" 
 		"lock" " -k 1 0"
 		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintLeg_R|FKIKLeg_R" 
-		"FKIKBlend" " -av -k 1"
-		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintLeg_R|FKIKLeg_R" 
 		"FKVis" " -av -k 1 1"
 		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintLeg_R|FKIKLeg_R" 
 		"IKVis" " -av -k 1 1"
@@ -2139,13 +2134,9 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintArm_R|FKIKArm_R" 
 		"IKVis" " -av -k 1 1"
 		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintSpine_M|FKIKSpine_M" 
-		"FKIKBlend" " -av -k 1"
-		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintSpine_M|FKIKSpine_M" 
 		"FKVis" " -av -k 1 1"
 		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintSpine_M|FKIKSpine_M" 
 		"IKVis" " -av -k 1 1"
-		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintLeg_L|FKIKLeg_L" 
-		"FKIKBlend" " -av -k 1"
 		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintLeg_L|FKIKLeg_L" 
 		"FKVis" " -av -k 1 1"
 		2 "|Group|Main|MotionSystem|FKIKSystem|FKIKParentConstraintLeg_L|FKIKLeg_L" 
@@ -2251,7 +2242,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetHip_R|BendParentConstraintHip_R|BendOffsetHip1_R|BendExtraHip1_R|BendHip1_R" 
 		"scaleZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetHip_R|BendParentConstraintHip_R|BendOffsetHip1_R|BendExtraHip1_R|BendHip1_R" 
-		"follow" " -av -k 1 5"
+		"follow" " -av -k 1 10"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetHip_R|BendParentConstraintHip_R|BendOffsetHip2_R|BendExtraHip2_R" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetHip_R|BendParentConstraintHip_R|BendOffsetHip2_R|BendExtraHip2_R" 
@@ -2283,7 +2274,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetHip_R|BendParentConstraintHip_R|BendOffsetHip2_R|BendExtraHip2_R|BendHip2_R" 
 		"scaleZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetHip_R|BendParentConstraintHip_R|BendOffsetHip2_R|BendExtraHip2_R|BendHip2_R" 
-		"stiff" " -av -k 1 10"
+		"stiff" " -av -k 1 5"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow1_R|BendExtraElbow1_R" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow1_R|BendExtraElbow1_R" 
@@ -2299,7 +2290,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow1_R|BendExtraElbow1_R|BendElbow1_R" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow1_R|BendExtraElbow1_R|BendElbow1_R" 
-		"rotate" " -type \"double3\" 0 0 0.63324195561704322"
+		"rotate" " -type \"double3\" 0 0 11.57928147414021147"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow1_R|BendExtraElbow1_R|BendElbow1_R" 
 		"rotateY" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow1_R|BendExtraElbow1_R|BendElbow1_R" 
@@ -2323,7 +2314,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow2_R|BendExtraElbow2_R|BendElbow2_R" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow2_R|BendExtraElbow2_R|BendElbow2_R" 
-		"translate" " -type \"double3\" 0.001191663700152146 -0.0032249433332923296 -0.0065995205256746637"
+		"translate" " -type \"double3\" 0.00014410816839049198 -0.0003899931472818641 -0.00079808155194205257"
 		
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow2_R|BendExtraElbow2_R|BendElbow2_R" 
 		"translateX" " -av"
@@ -2332,7 +2323,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow2_R|BendExtraElbow2_R|BendElbow2_R" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow2_R|BendExtraElbow2_R|BendElbow2_R" 
-		"rotate" " -type \"double3\" 0 0 0.63324195561704322"
+		"rotate" " -type \"double3\" 0 0 11.57928147414021147"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow2_R|BendExtraElbow2_R|BendElbow2_R" 
 		"rotateX" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_R|BendParentConstraintElbow_R|BendOffsetElbow2_R|BendExtraElbow2_R|BendElbow2_R" 
@@ -2364,7 +2355,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder1_R|BendExtraShoulder1_R|BendShoulder1_R" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder1_R|BendExtraShoulder1_R|BendShoulder1_R" 
-		"rotate" " -type \"double3\" 0 0 0.63324195561704322"
+		"rotate" " -type \"double3\" 0 0 11.57928147414021147"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder1_R|BendExtraShoulder1_R|BendShoulder1_R" 
 		"rotateY" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder1_R|BendExtraShoulder1_R|BendShoulder1_R" 
@@ -2388,8 +2379,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder2_R|BendExtraShoulder2_R|BendShoulder2_R" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder2_R|BendExtraShoulder2_R|BendShoulder2_R" 
-		"translate" " -type \"double3\" -0.0022788398023135107 -0.014546545662623875 -0.011575675240552481"
-		
+		"translate" " -type \"double3\" 0 0 0"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder2_R|BendExtraShoulder2_R|BendShoulder2_R" 
 		"translateX" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder2_R|BendExtraShoulder2_R|BendShoulder2_R" 
@@ -2397,7 +2387,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder2_R|BendExtraShoulder2_R|BendShoulder2_R" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder2_R|BendExtraShoulder2_R|BendShoulder2_R" 
-		"rotate" " -type \"double3\" 0 0 0.63324195561704322"
+		"rotate" " -type \"double3\" 0 0 11.57928147414021147"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder2_R|BendExtraShoulder2_R|BendShoulder2_R" 
 		"rotateX" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_R|BendParentConstraintShoulder_R|BendOffsetShoulder2_R|BendExtraShoulder2_R|BendShoulder2_R" 
@@ -2621,7 +2611,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow1_L|BendExtraElbow1_L|BendElbow1_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow1_L|BendExtraElbow1_L|BendElbow1_L" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 0 0 11.57928146999999974"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow1_L|BendExtraElbow1_L|BendElbow1_L" 
 		"rotateY" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow1_L|BendExtraElbow1_L|BendElbow1_L" 
@@ -2645,7 +2635,8 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow2_L|BendExtraElbow2_L|BendElbow2_L" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow2_L|BendExtraElbow2_L|BendElbow2_L" 
-		"translate" " -type \"double3\" 0 0 0"
+		"translate" " -type \"double3\" -0.0001441081684 0.00038999314729999999 0.00079808155189999995"
+		
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow2_L|BendExtraElbow2_L|BendElbow2_L" 
 		"translateX" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow2_L|BendExtraElbow2_L|BendElbow2_L" 
@@ -2653,7 +2644,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow2_L|BendExtraElbow2_L|BendElbow2_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow2_L|BendExtraElbow2_L|BendElbow2_L" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 0 0 11.57928146999999974"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow2_L|BendExtraElbow2_L|BendElbow2_L" 
 		"rotateX" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetElbow_L|BendParentConstraintElbow_L|BendOffsetElbow2_L|BendExtraElbow2_L|BendElbow2_L" 
@@ -2685,7 +2676,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_L|BendParentConstraintShoulder_L|BendOffsetShoulder1_L|BendExtraShoulder1_L|BendShoulder1_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_L|BendParentConstraintShoulder_L|BendOffsetShoulder1_L|BendExtraShoulder1_L|BendShoulder1_L" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 0 0 11.57928146999999974"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_L|BendParentConstraintShoulder_L|BendOffsetShoulder1_L|BendExtraShoulder1_L|BendShoulder1_L" 
 		"rotateY" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_L|BendParentConstraintShoulder_L|BendOffsetShoulder1_L|BendExtraShoulder1_L|BendShoulder1_L" 
@@ -2717,7 +2708,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_L|BendParentConstraintShoulder_L|BendOffsetShoulder2_L|BendExtraShoulder2_L|BendShoulder2_L" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_L|BendParentConstraintShoulder_L|BendOffsetShoulder2_L|BendExtraShoulder2_L|BendShoulder2_L" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 0 0 11.57928146999999974"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_L|BendParentConstraintShoulder_L|BendOffsetShoulder2_L|BendExtraShoulder2_L|BendShoulder2_L" 
 		"rotateX" " -av"
 		2 "|Group|Main|MotionSystem|BendSystem|BendParentConstraintOffsetShoulder_L|BendParentConstraintShoulder_L|BendOffsetShoulder2_L|BendExtraShoulder2_L|BendShoulder2_L" 
@@ -2741,7 +2732,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|RootSystem|RootCenterBtwLegsBlended_M|RootOffsetX_M|RootExtraX_M|RootX_M" 
 		"visibility" " -av 1"
 		2 "|Group|Main|MotionSystem|RootSystem|RootCenterBtwLegsBlended_M|RootOffsetX_M|RootExtraX_M|RootX_M" 
-		"translate" " -type \"double3\" 0 -0.00039461230051750977 0"
+		"translate" " -type \"double3\" 0 -0.10667740752582631 0"
 		2 "|Group|Main|MotionSystem|RootSystem|RootCenterBtwLegsBlended_M|RootOffsetX_M|RootExtraX_M|RootX_M" 
 		"translateX" " -av"
 		2 "|Group|Main|MotionSystem|RootSystem|RootCenterBtwLegsBlended_M|RootOffsetX_M|RootExtraX_M|RootX_M" 
@@ -2749,7 +2740,7 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		2 "|Group|Main|MotionSystem|RootSystem|RootCenterBtwLegsBlended_M|RootOffsetX_M|RootExtraX_M|RootX_M" 
 		"translateZ" " -av"
 		2 "|Group|Main|MotionSystem|RootSystem|RootCenterBtwLegsBlended_M|RootOffsetX_M|RootExtraX_M|RootX_M" 
-		"rotate" " -type \"double3\" 0 1.39742073294239844 0"
+		"rotate" " -type \"double3\" 0 -16.58845481049562665 0"
 		2 "|Group|Main|MotionSystem|RootSystem|RootCenterBtwLegsBlended_M|RootOffsetX_M|RootExtraX_M|RootX_M" 
 		"rotateY" " -av"
 		2 "|Group|Main|MotionSystem|RootSystem|RootCenterBtwLegsBlended_M|RootOffsetX_M|RootExtraX_M|RootX_M" 
@@ -2794,46 +2785,80 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"interpType" " 1"
 		2 "|Group|Main|MotionSystem|TwistSystem|TwistFollowParentOffsetScapula_L|TwistFollowParentScapula_L|UnTwistScapula_L|TwistBalancerScapula_L|TwistBalancerScapula_L_parentConstraint1" 
 		"interpType" " 1"
+		2 "|model:geo|model:Torso|TorsoShapeDeformed" "visibility" " -k 0 1"
+		2 "|model:geo|model:Arm_R|Arm_RShapeDeformed" "visibility" " -k 0 1"
+		2 "|model:geo|model:Tail|TailShapeDeformed" "visibility" " -k 0 1"
+		2 "|model:geo|model:Leg_L|Leg_LShapeDeformed" "visibility" " -k 0 1"
+		2 "|model:geo|model:Leg_R|Leg_RShapeDeformed" "visibility" " -k 0 1"
+		2 "|model:geo|model:Arm_L|Arm_LShapeDeformed" "visibility" " -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:Face|FaceShapeDeformed" "visibility" " -k 0 1"
+		
+		2 "|model:geo|model:Head_GRP|model:Brow_R|Brow_RShapeDeformed" "visibility" 
+		" -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:Brow_L|Brow_LShapeDeformed" "visibility" 
+		" -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_L|model:Eye_Bags_L|Eye_Bags_LShapeDeformed" 
+		"visibility" " -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_L|model:Eye_Socket_L|Eye_Socket_LShapeDeformed" 
+		"visibility" " -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_L|model:Eye_L|Eye_LShapeDeformed" 
+		"visibility" " -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_R|model:Eye_Bags_R|Eye_Bags_RShapeDeformed" 
+		"visibility" " -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_R|model:Eye_Socket_R|Eye_Socket_RShapeDeformed" 
+		"visibility" " -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_R|model:Eye_R|Eye_RShapeDeformed" 
+		"visibility" " -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:Tooth1|Tooth1ShapeDeformed" "visibility" 
+		" -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:Tooth2|Tooth2ShapeDeformed" "visibility" 
+		" -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:Tooth3|Tooth3ShapeDeformed" "visibility" 
+		" -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:Ear_L|Ear_LShapeDeformed" "visibility" 
+		" -k 0 1"
+		2 "|model:geo|model:Head_GRP|model:Ear_R|Ear_RShapeDeformed" "visibility" 
+		" -k 0 1"
 		2 "MainTwistFlipSetRange" "value" " -type \"float3\" 0 0 0"
-		3 "|model:geo|model:Head_GRP|model:Ear_L|Ear_LShapeDeformed.instObjGroups" 
+		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_R|model:Eye_R|Eye_RShapeDeformed.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Head_GRP|model:Ear_R|Ear_RShapeDeformed.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Head_GRP|model:Tooth2|Tooth2ShapeDeformed.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Head_GRP|model:Tooth3|Tooth3ShapeDeformed.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_L|model:Eye_Bags_L|Eye_Bags_LShapeDeformed.instObjGroups" 
+		3 "|model:geo|model:Head_GRP|model:Tooth1|Tooth1ShapeDeformed.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_L|model:Eye_L|Eye_LShapeDeformed.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Arm_L|Arm_LShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_L|model:Eye_Socket_L|Eye_Socket_LShapeDeformed.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Leg_L|Leg_LShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|model:geo|model:Tail|TailShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_R|model:Eye_R|Eye_RShapeDeformed.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_R|model:Eye_Bags_R|Eye_Bags_RShapeDeformed.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Arm_R|Arm_RShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
-		"-na"
-		3 "|model:geo|model:Head_GRP|model:Tooth1|Tooth1ShapeDeformed.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Head_GRP|model:Face|FaceShapeDeformed.instObjGroups" 
-		":initialShadingGroup.dagSetMembers" "-na"
-		3 "|model:geo|model:Head_GRP|model:Brow_L|Brow_LShapeDeformed.instObjGroups" 
+		3 "|model:geo|model:Head_GRP|model:Ear_R|Ear_RShapeDeformed.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_R|model:Eye_Socket_R|Eye_Socket_RShapeDeformed.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|model:geo|model:Arm_R|Arm_RShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|model:geo|model:Head_GRP|model:Tooth2|Tooth2ShapeDeformed.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|model:geo|model:Head_GRP|model:Brow_R|Brow_RShapeDeformed.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|model:geo|model:Head_GRP|model:Tooth3|Tooth3ShapeDeformed.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|model:geo|model:Head_GRP|model:Ear_L|Ear_LShapeDeformed.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_L|model:Eye_Bags_L|Eye_Bags_LShapeDeformed.instObjGroups" 
 		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|model:geo|model:Torso|TorsoShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
+		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_R|model:Eye_Bags_R|Eye_Bags_RShapeDeformed.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
 		3 "|model:geo|model:Leg_R|Leg_RShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|model:geo|model:Head_GRP|model:Brow_L|Brow_LShapeDeformed.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|model:geo|model:Leg_L|Leg_LShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|model:geo|model:Head_GRP|model:Face|FaceShapeDeformed.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|model:geo|model:Head_GRP|model:EYE_GRP|model:EYE_L|model:Eye_Socket_L|Eye_Socket_LShapeDeformed.instObjGroups" 
+		":initialShadingGroup.dagSetMembers" "-na"
+		3 "|model:geo|model:Arm_L|Arm_LShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
+		"-na"
+		3 "|model:geo|model:Tail|TailShapeDeformed.instObjGroups" ":initialShadingGroup.dagSetMembers" 
 		"-na"
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main.scaleX" "RickCoon_Rig_skinnedRN.placeHolderList[1]" 
 		""
@@ -2861,19 +2886,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[12]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[13]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[14]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[15]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.translateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[16]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[17]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[18]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[19]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.visibility" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[14]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.translateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[15]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.translateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[16]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[17]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[18]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[19]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[20]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[21]" ""
@@ -2881,19 +2906,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[22]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[23]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[24]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[25]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[26]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[27]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[24]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[28]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[25]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[29]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[26]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[27]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[28]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[29]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[30]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[31]" ""
@@ -2901,19 +2926,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[32]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[33]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[34]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[35]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[36]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[37]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[34]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[38]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[35]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[39]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[36]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[37]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[38]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[39]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[40]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[41]" ""
@@ -2921,19 +2946,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[42]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[43]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[44]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[45]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[46]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[47]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[44]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[48]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[45]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[49]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[46]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[47]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[48]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[49]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[50]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[51]" ""
@@ -2941,19 +2966,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[52]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[53]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[54]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[55]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[56]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[57]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[54]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[58]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[55]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[59]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[56]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[57]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[58]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[59]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[60]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[61]" ""
@@ -2961,19 +2986,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[62]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[63]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[64]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[65]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[66]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[67]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[64]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[68]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[65]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[69]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[66]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[67]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[68]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[69]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToRoot_M|FKOffsetTail0_M|FKExtraTail0_M|FKTail0_M|FKXTail0_M|FKOffsetTail1_M|FKExtraTail1_M|FKTail1_M|FKXTail1_M|FKOffsetTail2_M|FKExtraTail2_M|FKTail2_M|FKXTail2_M|FKOffsetTail3_M|FKExtraTail3_M|FKTail3_M|FKXTail3_M|FKOffsetTail4_M|FKExtraTail4_M|FKTail4_M|FKXTail4_M|FKOffsetTail5_M|FKExtraTail5_M|FKTail5_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[70]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.Global" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[71]" ""
@@ -2983,19 +3008,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[73]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[74]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[75]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[76]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[77]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[78]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[75]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[79]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[76]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[80]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[77]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[78]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[79]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[80]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[81]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToScapula_R|FKOffsetShoulder_R|FKGlobalStaticShoulder_R|FKGlobalShoulder_R|FKExtraShoulder_R|FKShoulder_R|FKXShoulder_R|FKOffsetElbow_R|FKExtraElbow_R|FKElbow_R.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[82]" ""
@@ -3023,19 +3048,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[93]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[94]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[95]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[96]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[97]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[98]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[95]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[99]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[96]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[100]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[97]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[98]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[99]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[100]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_R|FKExtraScapula_R|FKScapula_R.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[101]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[102]" ""
@@ -3043,19 +3068,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[103]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[104]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[105]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[106]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[107]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[108]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[105]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[109]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[106]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[110]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[107]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[108]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[109]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[110]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[111]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[112]" ""
@@ -3065,19 +3090,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[114]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.Global" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[115]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[116]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[117]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[118]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[119]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[116]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[120]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[117]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[121]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[118]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[119]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[120]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[121]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[122]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[123]" ""
@@ -3085,19 +3110,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[124]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[125]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[126]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[127]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[128]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.visibility" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[129]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[126]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[130]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[127]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[131]" ""
+		"RickCoon_Rig_skinnedRN.placeHolderList[128]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[129]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[130]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[131]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKOffsetJaw_M|FKExtraJaw_M|FKJaw_M.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[132]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_R|FKOffsetEye_R|FKExtraEye_R|FKEye_R.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[133]" ""
@@ -3125,19 +3150,19 @@ createNode reference -n "RickCoon_Rig_skinnedRN";
 		"RickCoon_Rig_skinnedRN.placeHolderList[144]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.scaleZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[145]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.translateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[146]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.translateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[147]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.translateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[148]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.rotateX" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[149]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.rotateY" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[150]" ""
-		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.rotateZ" 
-		"RickCoon_Rig_skinnedRN.placeHolderList[151]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.visibility" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[146]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.translateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[147]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.translateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[148]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.translateZ" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[149]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.rotateX" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[150]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.rotateY" 
+		"RickCoon_Rig_skinnedRN.placeHolderList[151]" ""
+		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetNeck_M|FKExtraNeck_M|FKNeck_M|FKXNeck_M|FKOffsetHead_M|FKGlobalStaticHead_M|FKGlobalHead_M|FKExtraHead_M|FKHead_M|FKXHead_M|FKAimEye_L|FKOffsetEye_L|FKExtraEye_L|FKEye_L.rotateZ" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[152]" ""
 		5 4 "RickCoon_Rig_skinnedRN" "|Group|Main|MotionSystem|FKSystem|FKParentConstraintToChest_M|FKOffsetScapula_L|FKExtraScapula_L|FKScapula_L.scaleX" 
 		"RickCoon_Rig_skinnedRN.placeHolderList[153]" ""
@@ -4225,8 +4250,8 @@ createNode animCurveTA -n "FKTail0_M_rotateZ";
 	rename -uid "F25AA553-1C49-D82E-F961-D788CCAD12B0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 -7.1110320572066144 5 -13.099222242868839
-		 9 -16.514597047254075 15 -7.1110320572066144 19 -13.099222242868839 23 -16.514597047254075
+	setAttr -s 7 ".ktv[0:6]"  1 -7.1110320572066144 5 -13.099222242868841
+		 9 -16.514597047254075 15 -7.1110320572066144 19 -13.099222242868841 23 -16.514597047254075
 		 30 -7.1110320572066144;
 createNode animCurveTU -n "FKTail0_M_scaleX";
 	rename -uid "E44CE297-E245-3D53-9F3D-E5AF96924C34";
@@ -5079,8 +5104,8 @@ createNode animCurveTA -n "FKShoulder_L_rotateX";
 	rename -uid "26F9D715-754D-74EA-F351-1EB4B18EEDEE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 6.5334839863265008 5 23.608485672645944
-		 15 -36.722842620000002 30 6.5334839863265008;
+	setAttr -s 4 ".ktv[0:3]"  1 6.5334839863265017 5 23.608485672645944
+		 15 -36.722842620000002 30 6.5334839863265017;
 createNode animCurveTA -n "FKShoulder_L_rotateY";
 	rename -uid "14C5EDD4-B449-1485-66BF-1880A8091C18";
 	setAttr ".tan" 18;
@@ -6728,8 +6753,8 @@ createNode animCurveTL -n "FKNeck_M_translateX";
 	rename -uid "5AE78D13-3343-0CDA-8889-99AC33330D66";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 7 ".ktv[0:6]"  1 0.10063925150314978 5 0.050319625751574899
-		 9 0 15 0.1006392515 19 0.050319625751574899 23 0 30 0.10063925150314978;
+	setAttr -s 7 ".ktv[0:6]"  1 0.1006392515031498 5 0.050319625751574899
+		 9 0 15 0.1006392515 19 0.050319625751574899 23 0 30 0.1006392515031498;
 createNode animCurveTL -n "FKNeck_M_translateY";
 	rename -uid "C943731A-E845-1517-15FC-77BB7494BE10";
 	setAttr ".tan" 18;
@@ -6810,14 +6835,14 @@ createNode animCurveTA -n "FKShoulder_R_rotateY";
 	rename -uid "2C7EFB23-3D4B-5417-6B4A-1F800513D3D0";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 3.4529639801489269 5 58.072850591242059
-		 9 59.199023346882768 15 62.481095629999992 30 3.4529639801489269;
+	setAttr -s 5 ".ktv[0:4]"  1 3.4529639801489274 5 58.072850591242059
+		 9 59.199023346882768 15 62.481095629999992 30 3.4529639801489274;
 createNode animCurveTA -n "FKShoulder_R_rotateZ";
 	rename -uid "5111887E-0641-3D7B-CCFC-C7A1A427F452";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 5 ".ktv[0:4]"  1 74.390578743386556 5 41.714336010498982
-		 9 -5.8811845358879316 15 -36.884228419999999 30 74.390578743386556;
+		 9 -5.8811845358879324 15 -36.884228419999999 30 74.390578743386556;
 createNode animCurveTU -n "FKShoulder_R_scaleX";
 	rename -uid "C82A0EC9-1E44-6FCF-377B-4EB3E0028108";
 	setAttr ".tan" 18;
@@ -7364,8 +7389,8 @@ createNode animCurveTA -n "RollOffsetToesEnd_R_rotateZ";
 	setAttr ".kox[0]"  0.59374671019805803;
 	setAttr ".koy[0]"  0.80465200187968411;
 select -ne :time1;
-	setAttr ".o" 2;
-	setAttr ".unw" 2;
+	setAttr ".o" 26;
+	setAttr ".unw" 26;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -7411,74 +7436,74 @@ connectAttr "Main_translateZ.o" "RickCoon_Rig_skinnedRN.phl[10]";
 connectAttr "FKTail0_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[11]";
 connectAttr "FKTail0_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[12]";
 connectAttr "FKTail0_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[13]";
-connectAttr "FKTail0_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[14]";
-connectAttr "FKTail0_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[15]";
-connectAttr "FKTail0_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[16]";
-connectAttr "FKTail0_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[17]";
-connectAttr "FKTail0_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[18]";
-connectAttr "FKTail0_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[19]";
-connectAttr "FKTail0_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[20]";
+connectAttr "FKTail0_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[14]";
+connectAttr "FKTail0_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[15]";
+connectAttr "FKTail0_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[16]";
+connectAttr "FKTail0_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[17]";
+connectAttr "FKTail0_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[18]";
+connectAttr "FKTail0_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[19]";
+connectAttr "FKTail0_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[20]";
 connectAttr "FKTail1_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[21]";
 connectAttr "FKTail1_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[22]";
 connectAttr "FKTail1_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[23]";
-connectAttr "FKTail1_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[24]";
-connectAttr "FKTail1_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[25]";
-connectAttr "FKTail1_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[26]";
-connectAttr "FKTail1_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[27]";
-connectAttr "FKTail1_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[28]";
-connectAttr "FKTail1_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[29]";
-connectAttr "FKTail1_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[30]";
+connectAttr "FKTail1_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[24]";
+connectAttr "FKTail1_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[25]";
+connectAttr "FKTail1_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[26]";
+connectAttr "FKTail1_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[27]";
+connectAttr "FKTail1_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[28]";
+connectAttr "FKTail1_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[29]";
+connectAttr "FKTail1_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[30]";
 connectAttr "FKTail2_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[31]";
 connectAttr "FKTail2_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[32]";
 connectAttr "FKTail2_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[33]";
-connectAttr "FKTail2_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[34]";
-connectAttr "FKTail2_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[35]";
-connectAttr "FKTail2_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[36]";
-connectAttr "FKTail2_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[37]";
-connectAttr "FKTail2_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[38]";
-connectAttr "FKTail2_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[39]";
-connectAttr "FKTail2_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[40]";
+connectAttr "FKTail2_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[34]";
+connectAttr "FKTail2_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[35]";
+connectAttr "FKTail2_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[36]";
+connectAttr "FKTail2_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[37]";
+connectAttr "FKTail2_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[38]";
+connectAttr "FKTail2_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[39]";
+connectAttr "FKTail2_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[40]";
 connectAttr "FKTail3_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[41]";
 connectAttr "FKTail3_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[42]";
 connectAttr "FKTail3_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[43]";
-connectAttr "FKTail3_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[44]";
-connectAttr "FKTail3_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[45]";
-connectAttr "FKTail3_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[46]";
-connectAttr "FKTail3_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[47]";
-connectAttr "FKTail3_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[48]";
-connectAttr "FKTail3_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[49]";
-connectAttr "FKTail3_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[50]";
+connectAttr "FKTail3_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[44]";
+connectAttr "FKTail3_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[45]";
+connectAttr "FKTail3_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[46]";
+connectAttr "FKTail3_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[47]";
+connectAttr "FKTail3_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[48]";
+connectAttr "FKTail3_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[49]";
+connectAttr "FKTail3_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[50]";
 connectAttr "FKTail4_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[51]";
 connectAttr "FKTail4_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[52]";
 connectAttr "FKTail4_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[53]";
-connectAttr "FKTail4_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[54]";
-connectAttr "FKTail4_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[55]";
-connectAttr "FKTail4_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[56]";
-connectAttr "FKTail4_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[57]";
-connectAttr "FKTail4_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[58]";
-connectAttr "FKTail4_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[59]";
-connectAttr "FKTail4_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[60]";
+connectAttr "FKTail4_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[54]";
+connectAttr "FKTail4_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[55]";
+connectAttr "FKTail4_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[56]";
+connectAttr "FKTail4_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[57]";
+connectAttr "FKTail4_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[58]";
+connectAttr "FKTail4_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[59]";
+connectAttr "FKTail4_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[60]";
 connectAttr "FKTail5_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[61]";
 connectAttr "FKTail5_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[62]";
 connectAttr "FKTail5_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[63]";
-connectAttr "FKTail5_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[64]";
-connectAttr "FKTail5_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[65]";
-connectAttr "FKTail5_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[66]";
-connectAttr "FKTail5_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[67]";
-connectAttr "FKTail5_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[68]";
-connectAttr "FKTail5_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[69]";
-connectAttr "FKTail5_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[70]";
+connectAttr "FKTail5_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[64]";
+connectAttr "FKTail5_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[65]";
+connectAttr "FKTail5_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[66]";
+connectAttr "FKTail5_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[67]";
+connectAttr "FKTail5_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[68]";
+connectAttr "FKTail5_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[69]";
+connectAttr "FKTail5_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[70]";
 connectAttr "FKShoulder_R_Global.o" "RickCoon_Rig_skinnedRN.phl[71]";
 connectAttr "FKShoulder_R_scaleX.o" "RickCoon_Rig_skinnedRN.phl[72]";
 connectAttr "FKShoulder_R_scaleY.o" "RickCoon_Rig_skinnedRN.phl[73]";
 connectAttr "FKShoulder_R_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[74]";
-connectAttr "FKShoulder_R_rotateX.o" "RickCoon_Rig_skinnedRN.phl[75]";
-connectAttr "FKShoulder_R_rotateY.o" "RickCoon_Rig_skinnedRN.phl[76]";
-connectAttr "FKShoulder_R_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[77]";
-connectAttr "FKShoulder_R_visibility.o" "RickCoon_Rig_skinnedRN.phl[78]";
-connectAttr "FKShoulder_R_translateX.o" "RickCoon_Rig_skinnedRN.phl[79]";
-connectAttr "FKShoulder_R_translateY.o" "RickCoon_Rig_skinnedRN.phl[80]";
-connectAttr "FKShoulder_R_translateZ.o" "RickCoon_Rig_skinnedRN.phl[81]";
+connectAttr "FKShoulder_R_visibility.o" "RickCoon_Rig_skinnedRN.phl[75]";
+connectAttr "FKShoulder_R_translateX.o" "RickCoon_Rig_skinnedRN.phl[76]";
+connectAttr "FKShoulder_R_translateY.o" "RickCoon_Rig_skinnedRN.phl[77]";
+connectAttr "FKShoulder_R_translateZ.o" "RickCoon_Rig_skinnedRN.phl[78]";
+connectAttr "FKShoulder_R_rotateX.o" "RickCoon_Rig_skinnedRN.phl[79]";
+connectAttr "FKShoulder_R_rotateY.o" "RickCoon_Rig_skinnedRN.phl[80]";
+connectAttr "FKShoulder_R_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[81]";
 connectAttr "FKElbow_R_scaleX.o" "RickCoon_Rig_skinnedRN.phl[82]";
 connectAttr "FKElbow_R_scaleY.o" "RickCoon_Rig_skinnedRN.phl[83]";
 connectAttr "FKElbow_R_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[84]";
@@ -7492,44 +7517,44 @@ connectAttr "FKElbow_R_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[91]";
 connectAttr "FKScapula_R_scaleX.o" "RickCoon_Rig_skinnedRN.phl[92]";
 connectAttr "FKScapula_R_scaleY.o" "RickCoon_Rig_skinnedRN.phl[93]";
 connectAttr "FKScapula_R_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[94]";
-connectAttr "FKScapula_R_rotateX.o" "RickCoon_Rig_skinnedRN.phl[95]";
-connectAttr "FKScapula_R_rotateY.o" "RickCoon_Rig_skinnedRN.phl[96]";
-connectAttr "FKScapula_R_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[97]";
-connectAttr "FKScapula_R_visibility.o" "RickCoon_Rig_skinnedRN.phl[98]";
-connectAttr "FKScapula_R_translateX.o" "RickCoon_Rig_skinnedRN.phl[99]";
-connectAttr "FKScapula_R_translateY.o" "RickCoon_Rig_skinnedRN.phl[100]";
-connectAttr "FKScapula_R_translateZ.o" "RickCoon_Rig_skinnedRN.phl[101]";
+connectAttr "FKScapula_R_visibility.o" "RickCoon_Rig_skinnedRN.phl[95]";
+connectAttr "FKScapula_R_translateX.o" "RickCoon_Rig_skinnedRN.phl[96]";
+connectAttr "FKScapula_R_translateY.o" "RickCoon_Rig_skinnedRN.phl[97]";
+connectAttr "FKScapula_R_translateZ.o" "RickCoon_Rig_skinnedRN.phl[98]";
+connectAttr "FKScapula_R_rotateX.o" "RickCoon_Rig_skinnedRN.phl[99]";
+connectAttr "FKScapula_R_rotateY.o" "RickCoon_Rig_skinnedRN.phl[100]";
+connectAttr "FKScapula_R_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[101]";
 connectAttr "FKNeck_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[102]";
 connectAttr "FKNeck_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[103]";
 connectAttr "FKNeck_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[104]";
-connectAttr "FKNeck_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[105]";
-connectAttr "FKNeck_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[106]";
-connectAttr "FKNeck_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[107]";
-connectAttr "FKNeck_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[108]";
-connectAttr "FKNeck_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[109]";
-connectAttr "FKNeck_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[110]";
-connectAttr "FKNeck_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[111]";
+connectAttr "FKNeck_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[105]";
+connectAttr "FKNeck_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[106]";
+connectAttr "FKNeck_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[107]";
+connectAttr "FKNeck_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[108]";
+connectAttr "FKNeck_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[109]";
+connectAttr "FKNeck_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[110]";
+connectAttr "FKNeck_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[111]";
 connectAttr "FKHead_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[112]";
 connectAttr "FKHead_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[113]";
 connectAttr "FKHead_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[114]";
 connectAttr "FKHead_M_Global.o" "RickCoon_Rig_skinnedRN.phl[115]";
-connectAttr "FKHead_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[116]";
-connectAttr "FKHead_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[117]";
-connectAttr "FKHead_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[118]";
-connectAttr "FKHead_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[119]";
-connectAttr "FKHead_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[120]";
-connectAttr "FKHead_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[121]";
-connectAttr "FKHead_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[122]";
+connectAttr "FKHead_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[116]";
+connectAttr "FKHead_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[117]";
+connectAttr "FKHead_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[118]";
+connectAttr "FKHead_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[119]";
+connectAttr "FKHead_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[120]";
+connectAttr "FKHead_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[121]";
+connectAttr "FKHead_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[122]";
 connectAttr "FKJaw_M_scaleX.o" "RickCoon_Rig_skinnedRN.phl[123]";
 connectAttr "FKJaw_M_scaleY.o" "RickCoon_Rig_skinnedRN.phl[124]";
 connectAttr "FKJaw_M_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[125]";
-connectAttr "FKJaw_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[126]";
-connectAttr "FKJaw_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[127]";
-connectAttr "FKJaw_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[128]";
-connectAttr "FKJaw_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[129]";
-connectAttr "FKJaw_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[130]";
-connectAttr "FKJaw_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[131]";
-connectAttr "FKJaw_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[132]";
+connectAttr "FKJaw_M_visibility.o" "RickCoon_Rig_skinnedRN.phl[126]";
+connectAttr "FKJaw_M_translateX.o" "RickCoon_Rig_skinnedRN.phl[127]";
+connectAttr "FKJaw_M_translateY.o" "RickCoon_Rig_skinnedRN.phl[128]";
+connectAttr "FKJaw_M_translateZ.o" "RickCoon_Rig_skinnedRN.phl[129]";
+connectAttr "FKJaw_M_rotateX.o" "RickCoon_Rig_skinnedRN.phl[130]";
+connectAttr "FKJaw_M_rotateY.o" "RickCoon_Rig_skinnedRN.phl[131]";
+connectAttr "FKJaw_M_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[132]";
 connectAttr "FKEye_R_scaleX.o" "RickCoon_Rig_skinnedRN.phl[133]";
 connectAttr "FKEye_R_scaleY.o" "RickCoon_Rig_skinnedRN.phl[134]";
 connectAttr "FKEye_R_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[135]";
@@ -7543,13 +7568,13 @@ connectAttr "FKEye_R_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[142]";
 connectAttr "FKEye_L_scaleX.o" "RickCoon_Rig_skinnedRN.phl[143]";
 connectAttr "FKEye_L_scaleY.o" "RickCoon_Rig_skinnedRN.phl[144]";
 connectAttr "FKEye_L_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[145]";
-connectAttr "FKEye_L_translateX.o" "RickCoon_Rig_skinnedRN.phl[146]";
-connectAttr "FKEye_L_translateY.o" "RickCoon_Rig_skinnedRN.phl[147]";
-connectAttr "FKEye_L_translateZ.o" "RickCoon_Rig_skinnedRN.phl[148]";
-connectAttr "FKEye_L_rotateX.o" "RickCoon_Rig_skinnedRN.phl[149]";
-connectAttr "FKEye_L_rotateY.o" "RickCoon_Rig_skinnedRN.phl[150]";
-connectAttr "FKEye_L_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[151]";
-connectAttr "FKEye_L_visibility.o" "RickCoon_Rig_skinnedRN.phl[152]";
+connectAttr "FKEye_L_visibility.o" "RickCoon_Rig_skinnedRN.phl[146]";
+connectAttr "FKEye_L_translateX.o" "RickCoon_Rig_skinnedRN.phl[147]";
+connectAttr "FKEye_L_translateY.o" "RickCoon_Rig_skinnedRN.phl[148]";
+connectAttr "FKEye_L_translateZ.o" "RickCoon_Rig_skinnedRN.phl[149]";
+connectAttr "FKEye_L_rotateX.o" "RickCoon_Rig_skinnedRN.phl[150]";
+connectAttr "FKEye_L_rotateY.o" "RickCoon_Rig_skinnedRN.phl[151]";
+connectAttr "FKEye_L_rotateZ.o" "RickCoon_Rig_skinnedRN.phl[152]";
 connectAttr "FKScapula_L_scaleX.o" "RickCoon_Rig_skinnedRN.phl[153]";
 connectAttr "FKScapula_L_scaleY.o" "RickCoon_Rig_skinnedRN.phl[154]";
 connectAttr "FKScapula_L_scaleZ.o" "RickCoon_Rig_skinnedRN.phl[155]";
