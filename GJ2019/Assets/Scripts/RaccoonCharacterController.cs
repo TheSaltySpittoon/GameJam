@@ -9,7 +9,7 @@ public class RaccoonCharacterController : MonoBehaviour
     public float moveSpeed = 15.0f;
     public float wallDetectionRange = 1.5f;
     public GameObject kickIndicator;
-    
+    public RaccoonAnimationController AnimCtrl;
 
     //distance between collider and ground
     private float distToGround = 0.0f;
@@ -152,6 +152,10 @@ public class RaccoonCharacterController : MonoBehaviour
         if (!kickMode)
         {
             rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+            if(movement.x != 0)
+            {
+                AnimCtrl.Walk();
+            }
         }
 
         if(hInput != 0 && Math.Sign(hInput) != Math.Sign(transform.right.x) && !CharacterManager.CharactersAttached)
