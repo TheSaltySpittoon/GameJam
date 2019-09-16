@@ -9,7 +9,7 @@ public class RaccoonCharacterController : MonoBehaviour
     public float moveSpeed = 15.0f;
     public float wallDetectionRange = 1.5f;
     public GameObject kickIndicator;
-    public float kickRange = 30;
+    
 
     //distance between collider and ground
     private float distToGround = 0.0f;
@@ -19,6 +19,10 @@ public class RaccoonCharacterController : MonoBehaviour
 
     //whether in kick mode or not
     private bool kickMode = false;
+    private float defaultKickAngle = 45f;
+    public float KickPower = 50f;
+    public float KickRangeMin = 15;
+    public float KickRangeMax = 75;
 
     private bool canClimb = false;
 
@@ -92,15 +96,19 @@ public class RaccoonCharacterController : MonoBehaviour
             else if(kickMode)
             {
                 //adjust kick direction
-                kickIndicator.transform.RotateAround(kickIndicator.transform.position, Vector3.forward, vInput * 20 * Time.deltaTime);
 
-                if(zInput)
+                float currAngle = kickIndicator.transform.eulerAngles.z;
+                Debug.Log("Current indicator angle : " + currAngle);
+                if (currAngle > KickRangeMax && vInput < 0
+                    || currAngle < KickRangeMin && vInput > 0
+                    || currAngle < KickRangeMax && currAngle > KickRangeMin)
+                {
+                    kickIndicator.transform.RotateAround(kickIndicator.transform.position, Vector3.forward, vInput * 30f * Time.deltaTime * CharacterManager.AttachSide);
+                }
+
+                if (zInput)
                 {
                     KickBall();
-                }
-                if(cInput)
-                {
-                    ExitKickMode();
                 }
             }
 
@@ -108,6 +116,10 @@ public class RaccoonCharacterController : MonoBehaviour
             if(cInput && !kickMode)
             {
                 CharacterManager.DetachCharacters();
+            }
+            else if(cInput)
+            {
+                ExitKickMode();
             }
             
         }
@@ -176,18 +188,35 @@ public class RaccoonCharacterController : MonoBehaviour
     {
         //spawn the targeting indicator and reset its position
         kickIndicator.SetActive(true);
+        Vector3 ballPos = BallCharacterController.instance.transform.position;
+        kickIndicator.transform.position = new Vector3(ballPos.x, ballPos.y, kickIndicator.transform.position.z);
+        kickIndicator.transform.eulerAngles = new Vector3(0, CharacterManager.AttachSide == -1 ? 180 : 0, 20); 
         kickMode = true;
     }
 
-    private void ExitKickMode()
+    private void ExitKickMode(bool didKick = false)
     {
         kickIndicator.SetActive(false);
         kickMode = false;
+        if(didKick)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 
     private void KickBall()
     {
-
+        float kickAngle = kickIndicator.transform.eulerAngles.z;
+        //add force to ball
+        CharacterManager.DetachCharacters();
+        float xPowerRatio = (90f - kickAngle) / 90f * CharacterManager.AttachSide;
+        float yPowerRatio = kickAngle / 90f;
+        BallCharacterController.instance.GetComponent<Rigidbody>().velocity = new Vector3(KickPower * xPowerRatio, KickPower * yPowerRatio, 0);
+        ExitKickMode();
     }
 }
 
