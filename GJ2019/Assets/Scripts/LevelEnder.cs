@@ -21,7 +21,7 @@ public class LevelEnder : LevelObject
     // Update is called once per frame
     void Update()
     {
-        if (ricIsHere && (bolIsHere && requiresBall))
+        if (ricIsHere && (bolIsHere || !requiresBall))
         {
             //SceneManager.LoadScene(nextScene);
             string currScene = SceneManager.GetActiveScene().name;
