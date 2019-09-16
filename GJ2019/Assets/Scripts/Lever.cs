@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Lever : MonoBehaviour
+public class Lever : ActivateableObject
 {
-
-    private bool isPushed = false;
-    private bool hasBeenPressed = false;
-    private bool isPressable = false;
 
     public GameObject stick;
 
@@ -60,9 +56,4 @@ public class Lever : MonoBehaviour
         }
     }
 
-    void ConsumePress()
-    {
-        // do we do anything here?
-        hasBeenPressed = false;
-    }
 }
